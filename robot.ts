@@ -79,4 +79,13 @@ namespace profdetech {
         pins.servoWritePin(AnalogPin.P0, 90);
     }
 
+	/**
+     * Etat du fin de course ouvert
+     */
+    //% subcategory=portail
+    //% blockId=FCO
+    //% block="etat fin de course ouvert"
+    export function FCO(): void {
+        return input.pinIsPressed(TouchPin.P1);
+    }
 }
