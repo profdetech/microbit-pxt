@@ -1,0 +1,18 @@
+{
+    "name": "pxt-mouronval",
+    "version": "0.0.1",
+    "description": "Blocks pour les cours de M. MOURONVAL",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "menu.ts",
+        "robot.ts"
+    ],
+    "testFiles": [
+        
+    ],
+    "public": true
+}
