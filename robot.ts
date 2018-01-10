@@ -100,7 +100,6 @@ namespace profdetech {
         if (a == 0) {
             return false;
         } else return true;
-}
     }
 	
 	
