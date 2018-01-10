@@ -135,9 +135,9 @@ namespace profdetech {
      * renvoie vrai si le portail est fermé est entier (FCF sur P15)
      */
     //% subcategory=portail
-    //% blockId=portail ouvert en entier
-    //% block="le portail est ouvert en entier (vrai ou faux)"
-    export function portail_ouvert(): boolean {
+    //% blockId=portail fermé en entier
+    //% block="le portail est fermé en entier (vrai ou faux)"
+    export function portail_ferme(): boolean {
 		if pins.digitalReadPin(P15) = 1 {
             return false;
         } else return true;

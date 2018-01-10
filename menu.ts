@@ -1,6 +1,6 @@
 /**
  * PROFDETECH blocks
  */
-//% weight=100 color=#0058a6 icon=""
+//% weight=100 color=#00ffa6 icon=""
 namespace Profdetech {
 }
