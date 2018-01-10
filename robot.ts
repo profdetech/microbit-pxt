@@ -75,7 +75,7 @@ namespace profdetech {
     //% subcategory=portail
     //% blockId=portail_arreter
     //% block="arreter le portail"
-    export function PD(): void {
+    export function arreter(): void {
         pins.servoWritePin(AnalogPin.P0, 90);
     }
 
