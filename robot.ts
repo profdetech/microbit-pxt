@@ -110,14 +110,13 @@ namespace profdetech {
     }
 	
 	/**
-     * renvoie vrai si le portail est ouvert en entier (FCO sur sur P1)
+     * renvoie vrai si le portail est ouvert en entier (FCO sur	 P1)
      */
     //% subcategory=portail
     //% blockId=portail ouvert en entier
     //% block="le portail est ouvert en entier (vrai ou faux)"
     export function portail_ouvert(): boolean {
-		let a: number = pins.digitalReadPin(P1);
-        if (a == 0) {
+		 if pins.digitalReadPin(P1) = 1 {
             return false;
         } else return true;
     }
@@ -133,14 +132,13 @@ namespace profdetech {
     }
 	
 	/**
-     * renvoie vrai si le portail est fermé est entier (FCF sur sur P15)
+     * renvoie vrai si le portail est fermé est entier (FCF sur P15)
      */
     //% subcategory=portail
     //% blockId=portail ouvert en entier
     //% block="le portail est ouvert en entier (vrai ou faux)"
     export function portail_ouvert(): boolean {
-		let a: number = pins.digitalReadPin(P15);
-        if (a == 0) {
+		if pins.digitalReadPin(P15) = 1 {
             return false;
         } else return true;
     }
