@@ -85,7 +85,7 @@ namespace profdetech {
     //% subcategory=portail
     //% blockId=FCO
     //% block="etat fin de course ouvert"
-    export function FCO(): void {
+    export function FCO(): number {
         return input.pinIsPressed(TouchPin.P1);
     }
 }
