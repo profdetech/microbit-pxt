@@ -1,7 +1,7 @@
 namespace profdetech {
 
 	/************************************************************************************************************************************************
-	* micro:bit mouronval
+	* micro:bit M. MOURONVAL
 	************************************************************************************************************************************************/
 
     /**
@@ -21,7 +21,7 @@ namespace profdetech {
     //% subcategory=robot
     //% blockId=robot_reculer
     //% block="reculer"
-    export function avancer(): void {
+    export function reculer(): void {
         pins.servoWritePin(AnalogPin.P0, 180);
         pins.servoWritePin(AnalogPin.P14, 0);
     }
