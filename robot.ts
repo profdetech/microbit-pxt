@@ -27,23 +27,23 @@ namespace profdetech {
     }
 	
 	/**
-     * Faire tourner à droite le robot
+     * Faire pivoter à droite le robot à vitesse maximum
      */
     //% subcategory=robot
-    //% blockId=robot_TD
-    //% block="Tourner_a_droite"
-    export function TD(): void {
+    //% blockId=robot_PD
+    //% block="Pivoter vers la droite"
+    export function PD(): void {
         pins.servoWritePin(AnalogPin.P0, 0);
         pins.servoWritePin(AnalogPin.P14, 90);
     }
 
     /**
-     * Faire tourner à gauche le robot
+     * Faire pivoter à gauche le robot à vitesse maximum
      */
     //% subcategory=robot
-    //% blockId=robot_TG
-    //% block="Touner_a_gauche"
-    export function TG(): void {
+    //% blockId=robot_PG
+    //% block="Pivoter vers la gauche"
+    export function PG(): void {
         pins.servoWritePin(AnalogPin.P0, 90);
         pins.servoWritePin(AnalogPin.P14, 180);
     }
