@@ -9,8 +9,7 @@
     "files": [
         "README.md",
         "menu.ts",
-        "robot.ts",
-		"portail.ts"
+        "robot.ts"
     ],
     "testFiles": [
         
