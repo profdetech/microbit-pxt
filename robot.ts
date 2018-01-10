@@ -55,7 +55,7 @@ namespace profdetech {
     //% subcategory=portail
     //% blockId=portail_ouvrir
     //% block="ouvrir le portail"
-    export function ouvrir(): void {
+    export function ouvrir_portail(): void {
         pins.servoWritePin(AnalogPin.P0, 0);
     }
 
@@ -63,9 +63,9 @@ namespace profdetech {
      * fermer le portail (moteur sur P0)
      */
     //% subcategory=portail
-    //% blockId=portail fermer
+    //% blockId=portail_fermer
     //% block="fermer le portail"
-    export function fermer(): void {
+    export function fermer_portail(): void {
         pins.servoWritePin(AnalogPin.P0, 180);
     }
 	
@@ -75,7 +75,7 @@ namespace profdetech {
     //% subcategory=portail
     //% blockId=portail_arreter
     //% block="arreter le portail"
-    export function arreter(): void {
+    export function arreter_portail(): void {
         pins.servoWritePin(AnalogPin.P0, 90);
     }
 
