@@ -86,6 +86,6 @@ namespace profdetech {
     //% blockId=FCO
     //% block="etat fin de course ouvert"
     export function FCO(): number {
-        return input.pinIsPressed(TouchPin.P1);
+		return pins.digitalReadPin(DigitalPin.P0);
     }
 }
