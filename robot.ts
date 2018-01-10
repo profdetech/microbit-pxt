@@ -84,8 +84,26 @@ namespace profdetech {
      */
     //% subcategory=portail
     //% blockId=FCO
-    //% block="etat fin de course ouvert"
+    //% block="etat fin de course ouvert (0 ou 1)"
     export function FCO(): number {
 		return pins.digitalReadPin(DigitalPin.P0);
     }
+	
+	/**
+     * Etat du fin de course ouvert
+     */
+    //% subcategory=portail
+    //% blockId=portail ouvert en entier
+    //% block="le portail est ouvert en entier (vrai ou faux)"
+    export function portail_ouvert(): boolean {
+		let a: number = pins.digitalReadPin(P0);
+        if (a == 0) {
+            return false;
+        } else return true;
+}
+    }
+	
+	
+	
+	
 }
