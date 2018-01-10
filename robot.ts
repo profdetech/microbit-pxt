@@ -5,7 +5,7 @@ namespace profdetech {
 	************************************************************************************************************************************************/
 
     /**
-     * Faire avancer le robot
+     * Faire avancer le robot (P0/P14)
      */
     //% subcategory=robot
     //% blockId=robot_avancer
@@ -16,7 +16,7 @@ namespace profdetech {
     }
 
     /**
-     * Faire reculer le robot
+     * Faire reculer le robot (P0/P14)
      */
     //% subcategory=robot
     //% blockId=robot_reculer
@@ -27,7 +27,7 @@ namespace profdetech {
     }
 	
 	/**
-     * Faire pivoter à droite le robot à vitesse maximum
+     * Faire pivoter à droite le robot à vitesse maximum (P0/P14)
      */
     //% subcategory=robot
     //% blockId=robot_PD
@@ -38,7 +38,7 @@ namespace profdetech {
     }
 
     /**
-     * Faire pivoter à gauche le robot à vitesse maximum
+     * Faire pivoter à gauche le robot à vitesse maximum (P0/P14)
      */
     //% subcategory=robot
     //% blockId=robot_PG
@@ -80,29 +80,70 @@ namespace profdetech {
     }
 
 	/**
-     * Etat du fin de course ouvert
+     * allumer le gyrophare (branché sur P14)
+     */
+    //% subcategory=portail
+    //% blockId=allum_gyro
+    //% block="allumer le gyrophare"
+    export function allumer_gyro(): void {
+        pins.digitalWritePin(DigitalPin.P14, 1)
+    }
+	
+	/**
+     * éteindre le gyrophare (branché sur P14)
+     */
+    //% subcategory=portail
+    //% blockId=etein_gyro
+    //% block="éteindre le gyrophare"
+    export function eteindre_gyro(): void {
+        pins.digitalWritePin(DigitalPin.P14, 0)
+    }
+	
+	/**
+     * Etat du fin de course ouvert sur P1
      */
     //% subcategory=portail
     //% blockId=FCO
     //% block="etat fin de course ouvert (0 ou 1)"
     export function FCO(): number {
-		return pins.digitalReadPin(DigitalPin.P0);
+		return pins.digitalReadPin(DigitalPin.P1);
     }
 	
 	/**
-     * Etat du fin de course ouvert
+     * renvoie vrai si le portail est ouvert en entier (FCO sur sur P1)
      */
     //% subcategory=portail
     //% blockId=portail ouvert en entier
     //% block="le portail est ouvert en entier (vrai ou faux)"
     export function portail_ouvert(): boolean {
-		let a: number = pins.digitalReadPin(P0);
+		let a: number = pins.digitalReadPin(P1);
         if (a == 0) {
             return false;
         } else return true;
     }
 	
+	/**
+     * Etat du fin de course fermé sur P15
+     */
+    //% subcategory=portail
+    //% blockId=FCF
+    //% block="etat fin de course fermé (0 ou 1)"
+    export function FCF(): number {
+		return pins.digitalReadPin(DigitalPin.P15);
+    }
 	
+	/**
+     * renvoie vrai si le portail est fermé est entier (FCF sur sur P15)
+     */
+    //% subcategory=portail
+    //% blockId=portail ouvert en entier
+    //% block="le portail est ouvert en entier (vrai ou faux)"
+    export function portail_ouvert(): boolean {
+		let a: number = pins.digitalReadPin(P15);
+        if (a == 0) {
+            return false;
+        } else return true;
+    }
 	
 	
 }
