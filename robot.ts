@@ -128,7 +128,7 @@ namespace profdetech {
     //% blockId=PO_entier
     //% block="le portail est ouvert en entier (vrai ou faux)"
     export function portail_ouvert(): boolean {
-		 if pins.digitalReadPin(P1) = 1 {
+		 if (pins.digitalReadPin(P1) = 1) {
             return false;
         } else return true;
     }
@@ -150,7 +150,7 @@ namespace profdetech {
     //% blockId=PF_entier
     //% block="le portail est fermé en entier (vrai ou faux)"
     export function portail_ferme(): boolean {
-		if pins.digitalReadPin(P15) = 1 {
+		if (pins.digitalReadPin(P15) = 1) {
             return false;
         } else return true;
     }
