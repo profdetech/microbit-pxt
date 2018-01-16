@@ -1,9 +1,20 @@
 namespace profdetech {
 
 	/************************************************************************************************************************************************
-	* micro:bit M. MOURONVAL
+	* micro:bit M MOURONVAL
 	************************************************************************************************************************************************/
 
+	/**
+     * Arrêter le robot (P0/P14)
+     */
+    //% subcategory=robot
+    //% blockId=robot_stop
+    //% block="arrêter"
+    export function arreter(): void {
+        pins.servoWritePin(AnalogPin.P0, 90);
+        pins.servoWritePin(AnalogPin.P14, 90);
+	
+	
     /**
      * Faire avancer le robot (P0/P14)
      */
