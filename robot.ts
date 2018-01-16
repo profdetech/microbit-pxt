@@ -13,6 +13,7 @@ namespace profdetech {
     export function arreter(): void {
         pins.servoWritePin(AnalogPin.P0, 90);
         pins.servoWritePin(AnalogPin.P14, 90);
+	}
 	
 	
     /**
