@@ -1,4 +1,4 @@
-//% weight=100 color=#0084b4 icon="\uf1b9"
+//% weight=100 color=#00aced icon="\uf1b9"
 namespace profdetech_portail{
 
 	/************************************************************************************************************************************************
@@ -14,7 +14,6 @@ namespace profdetech_portail{
 	/**
      * ouvrir le portail (moteur sur P0)
      */
-    //% subcategory=portail
     //% blockId=portail_ouvrir
     //% block="ouvrir le portail"
     export function ouvrir_portail(): void {
@@ -24,7 +23,6 @@ namespace profdetech_portail{
     /**
      * fermer le portail (moteur sur P0)
      */
-    //% subcategory=portail
     //% blockId=portail_fermer
     //% block="fermer le portail"
     export function fermer_portail(): void {
@@ -34,7 +32,6 @@ namespace profdetech_portail{
 	/**
      * arrêter le portail (moteur sur P0)
      */
-    //% subcategory=portail
     //% blockId=portail_arreter
     //% block="arreter le portail"
     export function arreter_portail(): void {
@@ -44,7 +41,6 @@ namespace profdetech_portail{
 	/**
      * allumer le gyrophare (branché sur P14)
      */
-    //% subcategory=portail
     //% blockId=allum_gyro
     //% block="allumer le gyrophare"
     export function allumer_gyro(): void {
@@ -54,7 +50,6 @@ namespace profdetech_portail{
 	/**
      * éteindre le gyrophare (branché sur P14)
      */
-    //% subcategory=portail
     //% blockId=etein_gyro
     //% block="éteindre le gyrophare"
     export function eteindre_gyro(): void {
@@ -64,7 +59,6 @@ namespace profdetech_portail{
 	/**
      * Etat du fin de course ouvert sur P1
      */
-    //% subcategory=portail
     //% blockId=FCO
     //% block="etat fin de course ouvert (0 ou 1)"
     export function FCO(): number {
@@ -74,7 +68,6 @@ namespace profdetech_portail{
 	/**
      * renvoie vrai si le portail est ouvert en entier (FCO sur	 P1)
      */
-    //% subcategory=portail
     //% blockId=PO_entier
     //% block="le portail est ouvert en entier (vrai ou faux)"
     export function portail_ouvert(): boolean {
@@ -86,7 +79,6 @@ namespace profdetech_portail{
 	/**
      * Etat du fin de course fermé sur P15
      */
-    //% subcategory=portail
     //% blockId=FCF
     //% block="etat fin de course fermé (0 ou 1)"
     export function FCF(): number {
@@ -96,7 +88,6 @@ namespace profdetech_portail{
 	/**
      * renvoie vrai si le portail est fermé est entier (FCF sur P15)
      */
-    //% subcategory=portail
     //% blockId=PF_entier
     //% block="le portail est fermé en entier (vrai ou faux)"
     export function portail_ferme(): boolean {
@@ -113,7 +104,6 @@ namespace profdetech_robot{
 /**
      * Faire pivoter à gauche le robot à vitesse maximum (P0/P14)
      */
-    //% subcategory=robot
     //% blockId=robot_PGG
     //% block="Pivoter vers la g"
     export function PG(): void {
@@ -125,7 +115,6 @@ namespace profdetech_robot{
 	/**
      * Arrêter le robot (P0/P14)
      */
-    //% subcategory=robot
     //% blockId=robot_stop
     //% block="arrêter"
     export function arreter(): void {
@@ -137,7 +126,6 @@ namespace profdetech_robot{
     /**
      * Faire avancer le robot (P0/P14)
      */
-    //% subcategory=robot
     //% blockId=robot_avancer
     //% block="avancer"
     export function avancer(): void {
@@ -148,7 +136,6 @@ namespace profdetech_robot{
     /**
      * Faire reculer le robot (P0/P14)
      */
-    //% subcategory=robot
     //% blockId=robot_reculer
     //% block="reculer"
     export function reculer(): void {
@@ -159,7 +146,6 @@ namespace profdetech_robot{
 	/**
      * Faire pivoter à droite le robot à vitesse maximum (P0/P14)
      */
-    //% subcategory=robot
     //% blockId=robot_PD
     //% block="Pivoter vers la droite"
     export function PD(): void {
@@ -170,7 +156,7 @@ namespace profdetech_robot{
 	/**
      * Faire pivoter à droite le robot de 90° (P0/P14)
      */
-    //% subcategory=robot/plus
+    //% subcategory=plus
     //% blockId=robot_PD90
     //% block="Pivoter vers la droite de 90°"
     export function PD(): void {
@@ -188,7 +174,6 @@ namespace profdetech_robot{
     /**
      * Faire pivoter à gauche le robot à vitesse maximum (P0/P14)
      */
-    //% subcategory=robot
     //% blockId=robot_PG
     //% block="Pivoter vers la gauche"
     export function PG(): void {
