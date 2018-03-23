@@ -181,13 +181,13 @@ namespace profdetech {
 	
 }
 
-namespace profdetech robot{
+namespace profdetech_robot{
 /**
      * Faire pivoter à gauche le robot à vitesse maximum (P0/P14)
      */
     //% subcategory=robot
-    //% blockId=robot_PG
-    //% block="Pivoter vers la gauche"
+    //% blockId=robot_PGG
+    //% block="Pivoter vers la g"
     export function PG(): void {
         pins.servoWritePin(AnalogPin.P0, 90);
         pins.servoWritePin(AnalogPin.P14, 180);
