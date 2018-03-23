@@ -1,3 +1,4 @@
+//% weight=100 color=#0084b4 icon="\uf1b9"
 namespace profdetech_portail{
 
 	/************************************************************************************************************************************************
@@ -107,7 +108,7 @@ namespace profdetech_portail{
 	
 }
 
-//% weight=100 color=#00ffa6 icon="\uf17b"
+//% weight=100 color=#0084b4 icon="\uf17b"
 namespace profdetech_robot{
 /**
      * Faire pivoter à gauche le robot à vitesse maximum (P0/P14)
