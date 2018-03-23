@@ -1,4 +1,4 @@
-namespace profdetech portail{
+namespace profdetech_portail{
 
 	/************************************************************************************************************************************************
 	* micro:bit / :MOURONVAL blocks
@@ -8,80 +8,6 @@ namespace profdetech portail{
 	
 	
 	
-	
-	/**
-     * Arrêter le robot (P0/P14)
-     */
-    //% subcategory=robot
-    //% blockId=robot_stop
-    //% block="arrêter"
-    export function arreter(): void {
-        pins.servoWritePin(AnalogPin.P0, 90);
-        pins.servoWritePin(AnalogPin.P14, 90);
-	}
-	
-	
-    /**
-     * Faire avancer le robot (P0/P14)
-     */
-    //% subcategory=robot
-    //% blockId=robot_avancer
-    //% block="avancer"
-    export function avancer(): void {
-        pins.servoWritePin(AnalogPin.P0, 0);
-        pins.servoWritePin(AnalogPin.P14, 180);
-    }
-
-    /**
-     * Faire reculer le robot (P0/P14)
-     */
-    //% subcategory=robot
-    //% blockId=robot_reculer
-    //% block="reculer"
-    export function reculer(): void {
-        pins.servoWritePin(AnalogPin.P0, 180);
-        pins.servoWritePin(AnalogPin.P14, 0);
-    }
-	
-	/**
-     * Faire pivoter à droite le robot à vitesse maximum (P0/P14)
-     */
-    //% subcategory=robot
-    //% blockId=robot_PD
-    //% block="Pivoter vers la droite"
-    export function PD(): void {
-        pins.servoWritePin(AnalogPin.P0, 0);
-        pins.servoWritePin(AnalogPin.P14, 90);
-    }
-	
-	/**
-     * Faire pivoter à droite le robot de 90° (P0/P14)
-     */
-    //% subcategory=robot/plus
-    //% blockId=robot_PD90
-    //% block="Pivoter vers la droite de 90°"
-    export function PD(): void {
-		let item = 0
-		item = input.compassHeading()
-        pins.servoWritePin(AnalogPin.P0, 0);
-        pins.servoWritePin(AnalogPin.P14, 90);
-		while (input.compassHeading() < item + 90) {
-	
-		}
-		pins.servoWritePin(AnalogPin.P0, 90);
-        pins.servoWritePin(AnalogPin.P14, 90);
-    }
-
-    /**
-     * Faire pivoter à gauche le robot à vitesse maximum (P0/P14)
-     */
-    //% subcategory=robot
-    //% blockId=robot_PG
-    //% block="Pivoter vers la gauche"
-    export function PG(): void {
-        pins.servoWritePin(AnalogPin.P0, 90);
-        pins.servoWritePin(AnalogPin.P14, 180);
-		}
 	
 	
 	/**
@@ -188,6 +114,81 @@ namespace profdetech_robot{
     //% subcategory=robot
     //% blockId=robot_PGG
     //% block="Pivoter vers la g"
+    export function PG(): void {
+        pins.servoWritePin(AnalogPin.P0, 90);
+        pins.servoWritePin(AnalogPin.P14, 180);
+		}
+	
+	
+	/**
+     * Arrêter le robot (P0/P14)
+     */
+    //% subcategory=robot
+    //% blockId=robot_stop
+    //% block="arrêter"
+    export function arreter(): void {
+        pins.servoWritePin(AnalogPin.P0, 90);
+        pins.servoWritePin(AnalogPin.P14, 90);
+	}
+	
+	
+    /**
+     * Faire avancer le robot (P0/P14)
+     */
+    //% subcategory=robot
+    //% blockId=robot_avancer
+    //% block="avancer"
+    export function avancer(): void {
+        pins.servoWritePin(AnalogPin.P0, 0);
+        pins.servoWritePin(AnalogPin.P14, 180);
+    }
+
+    /**
+     * Faire reculer le robot (P0/P14)
+     */
+    //% subcategory=robot
+    //% blockId=robot_reculer
+    //% block="reculer"
+    export function reculer(): void {
+        pins.servoWritePin(AnalogPin.P0, 180);
+        pins.servoWritePin(AnalogPin.P14, 0);
+    }
+	
+	/**
+     * Faire pivoter à droite le robot à vitesse maximum (P0/P14)
+     */
+    //% subcategory=robot
+    //% blockId=robot_PD
+    //% block="Pivoter vers la droite"
+    export function PD(): void {
+        pins.servoWritePin(AnalogPin.P0, 0);
+        pins.servoWritePin(AnalogPin.P14, 90);
+    }
+	
+	/**
+     * Faire pivoter à droite le robot de 90° (P0/P14)
+     */
+    //% subcategory=robot/plus
+    //% blockId=robot_PD90
+    //% block="Pivoter vers la droite de 90°"
+    export function PD(): void {
+		let item = 0
+		item = input.compassHeading()
+        pins.servoWritePin(AnalogPin.P0, 0);
+        pins.servoWritePin(AnalogPin.P14, 90);
+		while (input.compassHeading() < item + 90) {
+	
+		}
+		pins.servoWritePin(AnalogPin.P0, 90);
+        pins.servoWritePin(AnalogPin.P14, 90);
+    }
+
+    /**
+     * Faire pivoter à gauche le robot à vitesse maximum (P0/P14)
+     */
+    //% subcategory=robot
+    //% blockId=robot_PG
+    //% block="Pivoter vers la gauche"
     export function PG(): void {
         pins.servoWritePin(AnalogPin.P0, 90);
         pins.servoWritePin(AnalogPin.P14, 180);
