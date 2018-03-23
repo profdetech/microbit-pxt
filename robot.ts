@@ -53,6 +53,24 @@ namespace profdetech {
         pins.servoWritePin(AnalogPin.P0, 0);
         pins.servoWritePin(AnalogPin.P14, 90);
     }
+	
+	/**
+     * Faire pivoter à droite le robot de 90° (P0/P14)
+     */
+    //% subcategory=robot/plus
+    //% blockId=robot_PD90
+    //% block="Pivoter vers la droite de 90°"
+    export function PD(): void {
+		let item = 0
+		item = input.compassHeading()
+        pins.servoWritePin(AnalogPin.P0, 0);
+        pins.servoWritePin(AnalogPin.P14, 90);
+		while (input.compassHeading() < item + 90) {
+	
+		}
+		pins.servoWritePin(AnalogPin.P0, 90);
+        pins.servoWritePin(AnalogPin.P14, 90);
+    }
 
     /**
      * Faire pivoter à gauche le robot à vitesse maximum (P0/P14)
@@ -63,7 +81,7 @@ namespace profdetech {
     export function PG(): void {
         pins.servoWritePin(AnalogPin.P0, 90);
         pins.servoWritePin(AnalogPin.P14, 180);
-    }
+		}
 	
 	
 	/**
@@ -162,3 +180,19 @@ namespace profdetech {
 	
 	
 }
+
+namespace profdetech robot{
+/**
+     * Faire pivoter à gauche le robot à vitesse maximum (P0/P14)
+     */
+    //% subcategory=robot
+    //% blockId=robot_PG
+    //% block="Pivoter vers la gauche"
+    export function PG(): void {
+        pins.servoWritePin(AnalogPin.P0, 90);
+        pins.servoWritePin(AnalogPin.P14, 180);
+		}
+	
+
+}
+
