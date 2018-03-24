@@ -185,45 +185,42 @@ namespace profdetech_robot{
 		}
 	
 	/**
-     * Faire avancer le robot à une vitesse variable (P0/P14)
-     */
-	 //% subcategory=plus
-    //% blockId=robot_vitvar
-    //% block="Avancer à la vitesse"
-    export function PG(): void {
-        pins.servoWritePin(AnalogPin.P0, 0);
-        pins.servoWritePin(AnalogPin.P14, 180);
-		}
-	
-	
-	/**
-     * Turns on motor specified by eMotors in the direction specified
-     * by eDirection, at the requested speed 
-     *
-	 * @param motor which motor to turn on
-	 * @param dir   which direction to go
-/**
-     * Turns on motor specified by eMotors in the direction specified
-     * by eDirection, at the requested speed 
-     *
-	 * @param speed how fast to spin the motor
+     * avancer à une vitesse variable en pourcentage (P0/P14)
+	 * 100% = vitesse maximum
      */
     //% subcategory=plus
-    //% blockId=kitronik_motordriver_motor_on
-    //% block="vitesse %speed|%"
+    //% blockId=robot_vitvar
+    //% block="Avancer à la vitesse %speed|%"
     //% speed.min=0 speed.max=100
-    export function motorOn(speed: number): void {
-        /*first convert 0-100 to 0-1024 (approx) We wont worry about the lsat 24 to make life simpler*/
+    export function avancervitvar(speed: number): void {
+        /*first convert 0-100 to 0-90*/
         let OutputVal = Math.clamp(0, 100, speed) * 0.9;
 		let OutputVal2= 90 - OutputVal;
 		pins.servoWritePin(AnalogPin.P0, OutputVal2);
 		let OutputVal2= OutputVal + 90;
         pins.servoWritePin(AnalogPin.P14, OutputVal2);
-		
-		
-        
+		     
     }
     
+	
+	/**
+     * gestion des deux moteurs à une vitesse variable en pourcentage (P0/P14)
+	 * 100% = vitesse maximum
+     */
+    //% subcategory=plus
+    //% blockId=robot_motvitvar
+    //% block="moteur gauche vitesse %speed|% et moteur droit vitesse %speed2|%"
+    //% speed.min=0 speed.max=100
+    export function avancermotvitvar(speed: number, speed2: number): void {
+        /*first convert 0-100 to 0-90*/
+        let OutputVal = Math.clamp(0, 100, speed) * 0.9;
+		let OutputVal2= 90 - OutputVal;
+		pins.servoWritePin(AnalogPin.P0, OutputVal2);
+		let OutputVal = Math.clamp(0, 100, speed2) * 0.9;
+		let OutputVal2= OutputVal + 90;
+        pins.servoWritePin(AnalogPin.P14, OutputVal2);
+		     
+    }
 	
 	
 	
