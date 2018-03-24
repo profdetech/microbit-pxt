@@ -207,10 +207,11 @@ namespace profdetech_robot{
      * gestion des deux moteurs à une vitesse variable en pourcentage (P0/P14)
 	 * 100% = vitesse maximum
      */
-    //% subcategory=plus
+    //% subcategory="gestion avancé des moteurs"
     //% blockId=robot_motvitvar
-    //% block="moteur gauche vitesse %speed|% et moteur droit vitesse %speed2|%"
+    //% block="moteur gauche vitesse %speed| % et moteur droit vitesse %speed2| %"
     //% speed.min=0 speed.max=100
+	//% speed2.min=0 speed.max=100
     export function avancermotvitvar(speed: number, speed2: number): void {
         /*first convert 0-100 to 0-90*/
         let OutputVal = Math.clamp(0, 100, speed) * 0.9;
