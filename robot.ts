@@ -159,7 +159,7 @@ namespace profdetech_robot{
 	/**
      * Faire pivoter à droite le robot de 90° (P0/P14)
      */
-    //% subcategory=plus
+    //% subcategory="gestion avancée des moteurs"
     //% blockId=robot_PD90
     //% block="Pivoter vers la droite de 90°"
     export function PD(): void {
@@ -188,7 +188,7 @@ namespace profdetech_robot{
      * avancer à une vitesse variable en pourcentage (P0/P14)
 	 * 100% = vitesse maximum
      */
-    //% subcategory=plus
+    //% subcategory="gestion avancée des moteurs"
     //% blockId=robot_vitvar
     //% block="Avancer à la vitesse %speed|%"
     //% speed.min=0 speed.max=100
@@ -207,7 +207,7 @@ namespace profdetech_robot{
      * gestion des deux moteurs à une vitesse variable en pourcentage (P0/P14)
 	 * 100% = vitesse maximum
      */
-    //% subcategory="gestion avancé des moteurs"
+    //% subcategory="gestion avancée des moteurs"
     //% blockId=robot_motvitvar
     //% block="moteur gauche vitesse %speed| % et moteur droit vitesse %speed2| %"
     //% speed.min=0 speed.max=100
@@ -223,7 +223,15 @@ namespace profdetech_robot{
 		     
     }
 	
-	
+	/**
+     * Etat du capteur de vide sur P15
+     */
+	 //% subcategory="détection du vide"
+    //% blockId=vide
+    //% block="etat du capteur de vide (0 ou 1)"
+    export function capt_vide(): number {
+		return pins.digitalReadPin(DigitalPin.P15);
+    }
 	
 	
 	
