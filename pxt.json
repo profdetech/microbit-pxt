@@ -4,9 +4,7 @@
     "description": "Blocks pour les cours de M. MOURONVAL",
     "license": "MIT",
     "dependencies": {
-        "core": "*",
-		"neopixel": "github:microsoft/pxt-neopixel#v0.6.8",
-		"grove": "github:seeed-studio/pxt-grove#v0.1.0"
+        "core": "*"
     },
     "files": [
         "README.md",
