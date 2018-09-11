@@ -8,3 +8,7 @@ namespace Profdetech_portail {
 //% weight=100 color=#00ffa6 icon="\uf17b"
 namespace Profdetech_robot {
 }
+
+//% weight=100 color=#00ffa6 icon="\uf17b"
+namespace Profdetech_parking_trott {
+}

@@ -110,7 +110,16 @@ namespace profdetech_robot{
         pins.servoWritePin(AnalogPin.P0, 90);
         pins.servoWritePin(AnalogPin.P14, 180);
 		}
-	
+		
+		/**
+     * Faire pivoter à droite le robot à vitesse maximum (P0/P14)
+     */
+    //% blockId=robot_PDD
+    //% block="Pivoter vers la d"
+    export function PD(): void {
+        pins.servoWritePin(AnalogPin.P0, 0);
+        pins.servoWritePin(AnalogPin.P14, 90);
+    }
 	
 	/**
      * Arrêter le robot (P0/P14)
@@ -146,15 +155,7 @@ namespace profdetech_robot{
         pins.servoWritePin(AnalogPin.P14, 0);
     }
 	
-	/**
-     * Faire pivoter à droite le robot à vitesse maximum (P0/P14)
-     */
-    //% blockId=robot_PD
-    //% block="Pivoter vers la droite"
-    export function PD(): void {
-        pins.servoWritePin(AnalogPin.P0, 0);
-        pins.servoWritePin(AnalogPin.P14, 90);
-    }
+
 	
 	/**
      * Faire pivoter à droite le robot de 90° (P0/P14)
@@ -174,16 +175,7 @@ namespace profdetech_robot{
         pins.servoWritePin(AnalogPin.P14, 90);
     }
 
-    /**
-     * Faire pivoter à gauche le robot à vitesse maximum (P0/P14)
-     */
-    //% blockId=robot_PG
-    //% block="Pivoter vers la gauche"
-    export function PG(): void {
-        pins.servoWritePin(AnalogPin.P0, 90);
-        pins.servoWritePin(AnalogPin.P14, 180);
-		}
-	
+
 	/**
      * avancer à une vitesse variable en pourcentage (P0/P14)
 	 * 100% = vitesse maximum
@@ -211,7 +203,7 @@ namespace profdetech_robot{
     //% blockId=robot_motvitvar
     //% block="moteur gauche vitesse %speed| % et moteur droit vitesse %speed2| %"
     //% speed.min=0 speed.max=100
-	//% speed2.min=0 speed.max=100
+	//% speed2.min=0 speed2.max=100
     export function avancermotvitvar(speed: number, speed2: number): void {
         /*first convert 0-100 to 0-90*/
         let OutputVal = Math.clamp(0, 100, speed) * 0.9;
