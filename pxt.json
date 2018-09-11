@@ -1,11 +1,11 @@
 {
     "name": "pxt-mouronval",
-    "description": "Blocks pour les cours de M. MOURONVAL",
+    "description": "Blocks pour les cours de M.. MOURONVAL",
     "license": "MIT",
     "dependencies": {
         "core": "*",
-		"grov": "github:profdetech/pxt-grove#v0.1.0",
-		"neopixe": "github:profdetech/pxt-neopixel#v0.6.8"
+		"grove": "github:profdetech/pxt-grove#v0.1.0",
+		"neopixel": "github:profdetech/pxt-neopixel#v0.6.8"
     },
     "files": [
         "README.md",
