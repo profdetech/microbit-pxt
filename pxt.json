@@ -1,6 +1,7 @@
 {
     "name": "pxt-mouronval",
-    "description": "Blocks pour les cours de M.. MOURONVAL",
+	"version": "0.0.4",
+    "description": "Blocks pour les cours de M MOURONVAL",
     "license": "MIT",
     "dependencies": {
         "core": "*",
