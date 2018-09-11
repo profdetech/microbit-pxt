@@ -105,7 +105,7 @@ namespace profdetech_robot{
      * Faire pivoter à gauche le robot à vitesse maximum (P0/P14)
      */
     //% blockId=robot_PGG
-    //% block="Pivoter vers la g"
+    //% block="Pivoter vers la gauche"
     export function PG(): void {
         pins.servoWritePin(AnalogPin.P0, 90);
         pins.servoWritePin(AnalogPin.P14, 180);
@@ -115,7 +115,7 @@ namespace profdetech_robot{
      * Faire pivoter à droite le robot à vitesse maximum (P0/P14)
      */
     //% blockId=robot_PDD
-    //% block="Pivoter vers la d"
+    //% block="Pivoter vers la droite"
     export function PD(): void {
         pins.servoWritePin(AnalogPin.P0, 0);
         pins.servoWritePin(AnalogPin.P14, 90);
@@ -177,8 +177,7 @@ namespace profdetech_robot{
 
 
 	/**
-     * avancer à une vitesse variable en pourcentage (P0/P14)
-	 * 100% = vitesse maximum
+     * avancer à une vitesse variable en pourcentage (P0/P14) 100% = vitesse maximum
      */
     //% subcategory="gestion avancée des moteurs"
     //% blockId=robot_vitvar
@@ -196,8 +195,7 @@ namespace profdetech_robot{
     
 	
 	/**
-     * gestion des deux moteurs à une vitesse variable en pourcentage (P0/P14)
-	 * 100% = vitesse maximum
+     * gestion des deux moteurs à une vitesse variable en pourcentage (P0/P14) 100% = vitesse maximum
      */
     //% subcategory="gestion avancée des moteurs"
     //% blockId=robot_motvitvar
