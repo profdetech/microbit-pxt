@@ -6,7 +6,7 @@
     "dependencies": {
         "core": "*",
 		"grove": "github:profdetech/pxt-grove#v0.1.0",
-		"neopixel": "github:profdetech/pxt-neopixel#v0.6.8"
+		"neopixel": "github:profdetech/pxt-neopixel#v0.6.8",
 		"ir": "github:profdetech/pxt-ir-receiver#v0.0.1"
     },
     "files": [
