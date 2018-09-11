@@ -163,7 +163,7 @@ namespace profdetech_robot{
     //% subcategory="gestion avancée des moteurs"
     //% blockId=robot_PD90
     //% block="Pivoter vers la droite de 90°"
-    export function PD(): void {
+    export function PD90(): void {
 		let item = 0
 		item = input.compassHeading()
         pins.servoWritePin(AnalogPin.P0, 0);
