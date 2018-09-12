@@ -4,13 +4,13 @@
     "description": "Blocks pour les cours de M MOURONVAL",
     "license": "MIT",
     "dependencies": {
-        "core": "*",
+        "core": "*"
     },
     "files": [
         "README.md",
         "menu.ts",
         "robot.ts"
-		"pxt_grove"
+		"/pxt_grove"
     ],
     "testFiles": [
         
