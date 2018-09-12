@@ -5,7 +5,7 @@
     "license": "MIT",
     "dependencies": {
         "core": "*",
-		"grove": "github:profdetech/pxt-grove#v0.1.0",
+		"grovi": "github:profdetech/pxt-grove#v0.1.0",
 		"neopixel": "github:profdetech/pxt-neopixel#v0.6.8"
     },
     "files": [
