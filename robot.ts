@@ -160,7 +160,7 @@ namespace profdetech_robot{
 	/**
      * Faire pivoter à droite le robot de 90° (P0/P14)
      */
-    //% subcategory="gestion avancée des moteurs"
+    //% subcategory="Moteurs option sup"
     //% blockId=robot_PD90
     //% block="Pivoter vers la droite de 90°"
     export function PD90(): void {
@@ -179,7 +179,7 @@ namespace profdetech_robot{
 	/**
      * avancer à une vitesse variable en pourcentage (P0/P14) 100% = vitesse maximum
      */
-    //% subcategory="gestion avancée des moteurs"
+    //% subcategory="Moteurs option sup"
     //% blockId=robot_vitvar
     //% block="Avancer à la vitesse %speed|%"
     //% speed.min=0 speed.max=100
@@ -188,7 +188,7 @@ namespace profdetech_robot{
         let OutputVal = Math.clamp(0, 100, speed) * 0.9;
 		let OutputVal2= 90 - OutputVal;
 		pins.servoWritePin(AnalogPin.P0, OutputVal2);
-		let OutputVal2= OutputVal + 90;
+		OutputVal2= OutputVal + 90;
         pins.servoWritePin(AnalogPin.P14, OutputVal2);
 		     
     }
@@ -197,18 +197,18 @@ namespace profdetech_robot{
 	/**
      * gestion des deux moteurs à une vitesse variable en pourcentage (P0/P14) 100% = vitesse maximum
      */
-    //% subcategory="gestion avancée des moteurs"
+    //% subcategory="Moteurs option sup"
     //% blockId=robot_motvitvar
     //% block="moteur gauche vitesse %speed| % et moteur droit vitesse %speed2| %"
     //% speed.min=0 speed.max=100
 	//% speed2.min=0 speed2.max=100
     export function avancermotvitvar(speed: number, speed2: number): void {
         /*first convert 0-100 to 0-90*/
-        let OutputVal = Math.clamp(0, 100, speed) * 0.9;
-		let OutputVal2= 90 - OutputVal;
+        OutputVal = Math.clamp(0, 100, speed) * 0.9;
+		OutputVal2= 90 - OutputVal;
 		pins.servoWritePin(AnalogPin.P0, OutputVal2);
-		let OutputVal = Math.clamp(0, 100, speed2) * 0.9;
-		let OutputVal2= OutputVal + 90;
+		OutputVal = Math.clamp(0, 100, speed2) * 0.9;
+		OutputVal2= OutputVal + 90;
         pins.servoWritePin(AnalogPin.P14, OutputVal2);
 		     
     }
