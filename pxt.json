@@ -5,13 +5,12 @@
     "license": "MIT",
     "dependencies": {
         "core": "*",
-		"grovi": "file:pxt-grove",
-		"neopixel": "github:profdetech/pxt-neopixel#v0.6.8"
     },
     "files": [
         "README.md",
         "menu.ts",
         "robot.ts"
+		"pxt_grove"
     ],
     "testFiles": [
         
