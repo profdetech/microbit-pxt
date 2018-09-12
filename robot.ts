@@ -179,7 +179,6 @@ namespace profdetech_robot{
 	/**
      * avancer à une vitesse variable en pourcentage (P0/P14) 100% = vitesse maximum
      */
-    //% subcategory="Moteurs option sup"
     //% blockId=robot_vitvar
     //% block="Avancer à la vitesse %speed|%"
     //% speed.min=0 speed.max=100
@@ -197,7 +196,6 @@ namespace profdetech_robot{
 	/**
      * gestion des deux moteurs à une vitesse variable en pourcentage (P0/P14) 100% = vitesse maximum
      */
-    //% subcategory="Moteurs option sup"
     //% blockId=robot_motvitvar
     //% block="moteur gauche vitesse %speed| % et moteur droit vitesse %speed2| %"
     //% speed.min=0 speed.max=100
