@@ -225,3 +225,35 @@ namespace profdetech_robot{
 	
 }
 
+//% weight=100 color=#0084b4 icon="\uf206"
+namespace profdetech_parking_trottinettes{
+
+/**
+     * Etat du fin de course sur P0
+     */
+    //% blockId=FC1
+    //% block="Etat du fin de course sur la première place de parking (0 ou 1)"
+    export function FCO(): number {
+		return pins.digitalReadPin(DigitalPin.P0);
+    }
+	
+/**
+     * Etat du fin de course sur P1
+     */
+    //% blockId=FC2
+    //% block="Etat du fin de course sur la deuxième place de parking (0 ou 1)"
+    export function FCO(): number {
+		return pins.digitalReadPin(DigitalPin.P1);
+    }
+	
+	
+	/**
+     * Etat du fin de course sur P2
+     */
+    //% blockId=FC3
+    //% block="Etat du fin de course sur la troisième place de parking (0 ou 1)"
+    export function FCO(): number {
+		return pins.digitalReadPin(DigitalPin.P2);
+    }
+
+}
