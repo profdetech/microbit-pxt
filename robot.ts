@@ -202,12 +202,12 @@ namespace profdetech_robot{
 	//% speed2.min=0 speed2.max=100
     export function avancermotvitvar(speed: number, speed2: number): void {
         /*first convert 0-100 to 0-90*/
-        OutputVal = Math.clamp(0, 100, speed) * 0.9;
-		OutputVal2= 90 - OutputVal;
-		pins.servoWritePin(AnalogPin.P0, OutputVal2);
-		OutputVal = Math.clamp(0, 100, speed2) * 0.9;
-		OutputVal2= OutputVal + 90;
-        pins.servoWritePin(AnalogPin.P14, OutputVal2);
+        let OutputVal3 = Math.clamp(0, 100, speed) * 0.9;
+		let OutputVal4= 90 - OutputVal3;
+		pins.servoWritePin(AnalogPin.P0, OutputVal4);
+		OutputVal3 = Math.clamp(0, 100, speed2) * 0.9;
+		OutputVal4= OutputVal3 + 90;
+        pins.servoWritePin(AnalogPin.P14, OutputVal4);
 		     
     }
 	
