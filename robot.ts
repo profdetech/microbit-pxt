@@ -179,6 +179,7 @@ namespace profdetech_robot{
 	/**
      * avancer à une vitesse variable en pourcentage (P0/P14) 100% = vitesse maximum
      */
+	 //% subcategory="Moteurs option sup"
     //% blockId=robot_vitvar
     //% block="Avancer à la vitesse %speed|%"
     //% speed.min=0 speed.max=100
@@ -196,6 +197,7 @@ namespace profdetech_robot{
 	/**
      * gestion des deux moteurs à une vitesse variable en pourcentage (P0/P14) 100% = vitesse maximum
      */
+	 //% subcategory="Moteurs option sup"
     //% blockId=robot_motvitvar
     //% block="moteur gauche vitesse %speed| % et moteur droit vitesse %speed2| %"
     //% speed.min=0 speed.max=100
@@ -232,8 +234,8 @@ namespace profdetech_parking_trottinettes{
      * Etat du fin de course sur P0
      */
     //% blockId=FC1
-    //% block="Etat du fin de course sur la première place de parking (0 ou 1)"
-    export function FCO(): number {
+    //% block="Etat fin de course 1ere place de parking (0 ou 1)"
+    export function FC1(): number {
 		return pins.digitalReadPin(DigitalPin.P0);
     }
 	
@@ -241,8 +243,8 @@ namespace profdetech_parking_trottinettes{
      * Etat du fin de course sur P1
      */
     //% blockId=FC2
-    //% block="Etat du fin de course sur la deuxième place de parking (0 ou 1)"
-    export function FCO(): number {
+    //% block="Etat fin de course 2eme place de parking (0 ou 1)"
+    export function FC2(): number {
 		return pins.digitalReadPin(DigitalPin.P1);
     }
 	
@@ -251,9 +253,41 @@ namespace profdetech_parking_trottinettes{
      * Etat du fin de course sur P2
      */
     //% blockId=FC3
-    //% block="Etat du fin de course sur la troisième place de parking (0 ou 1)"
-    export function FCO(): number {
+    //% block="Etat fin de course 3eme place de parking (0 ou 1)"
+    export function FC3(): number {
 		return pins.digitalReadPin(DigitalPin.P2);
     }
 
+	/**
+     * renvoie vrai si la trottinette 1 est présente (P0)
+     */
+    //% blockId=trott1
+    //% block="la trottinette active le fin de course 1 (vrai ou faux)"
+    export function trot1(): boolean {
+		if (pins.digitalReadPin(DigitalPin.P0) == 1) {
+            return false;
+        } else return true;
+    }
+	
+		/**
+     * renvoie vrai si la trottinette 2 est présente (P1)
+     */
+    //% blockId=trott2
+    //% block="la trottinette active le fin de course 2 (vrai ou faux)"
+    export function trot2(): boolean {
+		if (pins.digitalReadPin(DigitalPin.P1) == 1) {
+            return false;
+        } else return true;
+    }
+	
+		/**
+     * renvoie vrai si la trottinette 1 est présente (P3)
+     */
+    //% blockId=trott1
+    //% block="la trottinette active le fin de course 3 (vrai ou faux)"
+    export function trot3(): boolean {
+		if (pins.digitalReadPin(DigitalPin.P2) == 1) {
+            return false;
+        } else return true;
+    }
 }
