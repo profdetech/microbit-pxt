@@ -6,7 +6,8 @@
     "dependencies": {
         "core": "*",
 		"grovi": "github:profdetech/pxt-grove#v0.1.0",
-		"neopixel": "github:profdetech/pxt-neopixel#v0.6.8"
+		"neopixel": "github:profdetech/pxt-neopixel#v0.6.8",
+		"url": "https://github.com/profdetech/pxt-ir-receiver"
     },
     "files": [
         "README.md",
