@@ -234,7 +234,7 @@ namespace profdetech_robot{
 		/**
      * Etat du capteur de fin de course détection obstacle sur P1
      */
-	 //% subcategory="détection obstacle"
+	 //% subcategory="Détection obstacle"
     //% blockId=obstacle
     //% block="etat du capteur obstacle (0 ou 1)"
     export function capt_obstacle(): number {
@@ -244,7 +244,7 @@ namespace profdetech_robot{
 	/**
      * Etat du capteur de vide sur P15
      */
-	 //% subcategory="détection du vide"
+	 //% subcategory="Détection du vide"
     //% blockId=vide
     //% block="etat du capteur de vide (0 ou 1)"
     export function capt_vide(): number {
