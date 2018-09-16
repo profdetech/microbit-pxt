@@ -1,13 +1,17 @@
 //% weight=100 color=#00aced icon="\uf1b9"
 namespace profdetech_portail{
 
-	/************************************************************************************************************************************************
-	* micro:bit / :MOURONVAL blocks
-	************************************************************************************************************************************************/
-
-	/*variables et constantes */
 	
-	
+	/**
+     * P0 = Moteur du portail
+	 P14 = Gyrophare
+	 * P1 = Fin de course ouvert
+	 * P2 Fin de course fermé
+     */
+    //% blockId=portail_descriptif
+    //% block="descriptif"
+    export function portail_descriptif(): void {
+    }
 	
 	
 	
@@ -240,22 +244,22 @@ namespace profdetech_parking_trottinettes{
     }
 	
 /**
-     * Etat du fin de course sur P1
+     * Etat du fin de course sur P14
      */
     //% blockId=FC2
     //% block="Etat fin de course 2eme place de parking (0 ou 1)"
     export function FC2(): number {
-		return pins.digitalReadPin(DigitalPin.P1);
+		return pins.digitalReadPin(DigitalPin.P14);
     }
 	
 	
 	/**
-     * Etat du fin de course sur P2
+     * Etat du fin de course sur P1
      */
     //% blockId=FC3
     //% block="Etat fin de course 3eme place de parking (0 ou 1)"
     export function FC3(): number {
-		return pins.digitalReadPin(DigitalPin.P2);
+		return pins.digitalReadPin(DigitalPin.P1);
     }
 
 	/**
@@ -270,23 +274,23 @@ namespace profdetech_parking_trottinettes{
     }
 	
 		/**
-     * renvoie vrai si la trottinette 2 est présente (P1)
+     * renvoie vrai si la trottinette 2 est présente (P14)
      */
     //% blockId=trott2
     //% block="la trottinette active le fin de course 2 (vrai ou faux)"
     export function trot2(): boolean {
-		if (pins.digitalReadPin(DigitalPin.P1) == 1) {
+		if (pins.digitalReadPin(DigitalPin.P14) == 1) {
             return false;
         } else return true;
     }
 	
 		/**
-     * renvoie vrai si la trottinette 1 est présente (P3)
+     * renvoie vrai si la trottinette 1 est présente (P1)
      */
     //% blockId=trott3
     //% block="la trottinette active le fin de course 3 (vrai ou faux)"
     export function trot3(): boolean {
-		if (pins.digitalReadPin(DigitalPin.P2) == 1) {
+		if (pins.digitalReadPin(DigitalPin.P1) == 1) {
             return false;
         } else return true;
     }
