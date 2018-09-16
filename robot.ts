@@ -3,7 +3,9 @@ namespace profdetech_portail{
 
 	
 	/**
-     * P0 = Moteur du portail //* P14 = Gyrophare
+     // P0 = Moteur du portail 
+	 //
+	 // P14 = Gyrophare
 	 * P1 = Fin de course ouvert
 	 * P15 = Fin de course fermé
      */
@@ -236,7 +238,7 @@ namespace profdetech_robot{
      */
 	 //% subcategory="Détection obstacle"
     //% blockId=obstacle
-    //% block="etat du capteur obstacle (0 ou 1)"
+    //% block="Etat du capteur obstacle (0 ou 1)"
     export function capt_obstacle(): number {
 		return pins.digitalReadPin(DigitalPin.P1);
     }
@@ -246,7 +248,7 @@ namespace profdetech_robot{
      */
 	 //% subcategory="Détection du vide"
     //% blockId=vide
-    //% block="etat du capteur de vide (0 ou 1)"
+    //% block="Etat du capteur de vide (0 ou 1)"
     export function capt_vide(): number {
 		return pins.digitalReadPin(DigitalPin.P15);
     }
