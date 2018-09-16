@@ -3,10 +3,10 @@ namespace profdetech_portail{
 
 	
 	/**
-	 P0 = Moteur du portail 
-	 P14 = Gyrophare
-	 P1 = Fin de course ouvert
-	 P15 = Fin de course fermé
+	 * P0 = Moteur du portail 
+	 * P14 = Gyrophare
+	 * P1 = Fin de course ouvert
+	 * P15 = Fin de course fermé
 	 */
     //% blockId=portail_descriptif
     //% block="Descriptif branchement portail"
@@ -258,6 +258,17 @@ namespace profdetech_robot{
 
 //% weight=100 color=#0084b4 icon="\uf206"
 namespace profdetech_parking_trottinettes{
+
+/**
+     * P0 = Fin de course trottinette 1
+	 * P14 = Fin de course trottinette 2
+	 * P1 = Fin de course trottinette 3
+     */
+    //% blockId=park_descriptif
+    //% block="descriptif branchement maquette parking"
+    export function park_descriptif(): void {
+    }
+
 
 /**
      * Etat du fin de course n°1 sur P0
