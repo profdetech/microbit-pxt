@@ -8,7 +8,7 @@ namespace profdetech_portail{
 	 * P15 = Fin de course fermé
      */
     //% blockId=portail_descriptif
-    //% block="descriptif branchement portail"
+    //% block="Descriptif branchement portail"
     export function portail_descriptif(): void {
     }
 	
@@ -18,7 +18,7 @@ namespace profdetech_portail{
      * ouvrir le portail (moteur sur P0)
      */
     //% blockId=portail_ouvrir
-    //% block="ouvrir le portail"
+    //% block="Ouvrir le portail"
     export function ouvrir_portail(): void {
         pins.servoWritePin(AnalogPin.P0, 0);
     }
@@ -27,7 +27,7 @@ namespace profdetech_portail{
      * fermer le portail (moteur sur P0)
      */
     //% blockId=portail_fermer
-    //% block="fermer le portail"
+    //% block="Fermer le portail"
     export function fermer_portail(): void {
         pins.servoWritePin(AnalogPin.P0, 180);
     }
@@ -36,7 +36,7 @@ namespace profdetech_portail{
      * arrêter le portail (moteur sur P0)
      */
     //% blockId=portail_arreter
-    //% block="arreter le portail"
+    //% block="Arreter le portail"
     export function arreter_portail(): void {
         pins.servoWritePin(AnalogPin.P0, 90);
     }
@@ -45,7 +45,7 @@ namespace profdetech_portail{
      * allumer le gyrophare (branché sur P14)
      */
     //% blockId=allum_gyro
-    //% block="allumer le gyrophare"
+    //% block="Allumer le gyrophare"
     export function allumer_gyro(): void {
         pins.digitalWritePin(DigitalPin.P14, 1)
     }
@@ -54,7 +54,7 @@ namespace profdetech_portail{
      * éteindre le gyrophare (branché sur P14)
      */
     //% blockId=etein_gyro
-    //% block="éteindre le gyrophare"
+    //% block="Eteindre le gyrophare"
     export function eteindre_gyro(): void {
         pins.digitalWritePin(DigitalPin.P14, 0)
     }
@@ -63,7 +63,7 @@ namespace profdetech_portail{
      * Etat du fin de course ouvert sur P1
      */
     //% blockId=FCO
-    //% block="etat fin de course ouvert (0 ou 1)"
+    //% block="Etat fin de course ouvert (0 ou 1)"
     export function FCO(): number {
 		return pins.digitalReadPin(DigitalPin.P1);
     }
@@ -72,7 +72,7 @@ namespace profdetech_portail{
      * renvoie vrai si le portail est ouvert en entier (FCO sur	 P1)
      */
     //% blockId=PO_entier
-    //% block="le portail est ouvert en entier (vrai ou faux)"
+    //% block="Le portail est ouvert en entier (vrai ou faux)"
     export function portail_ouvert(): boolean {
 		 if (pins.digitalReadPin(DigitalPin.P1) == 1) {
             return false;
@@ -195,7 +195,7 @@ namespace profdetech_robot{
 
 
 	/**
-     * avancer à une vitesse variable en pourcentage (P0/P14) 100% = vitesse maximum
+     * Avancer à une vitesse variable en pourcentage (P0/P14) 100% = vitesse maximum
      */
 	 //% subcategory="Moteurs option sup"
     //% blockId=robot_vitvar
@@ -217,7 +217,7 @@ namespace profdetech_robot{
      */
 	 //% subcategory="Moteurs option sup"
     //% blockId=robot_motvitvar
-    //% block="moteur gauche vitesse %speed| % et moteur droit vitesse %speed2| %"
+    //% block="Moteur gauche vitesse %speed| % et moteur droit vitesse %speed2| %"
     //% speed.min=0 speed.max=100
 	//% speed2.min=0 speed2.max=100
     export function avancermotvitvar(speed: number, speed2: number): void {
@@ -229,6 +229,16 @@ namespace profdetech_robot{
 		OutputVal4= OutputVal3 + 90;
         pins.servoWritePin(AnalogPin.P14, OutputVal4);
 		     
+    }
+	
+		/**
+     * Etat du capteur de fin de course détection obstacle sur P1
+     */
+	 //% subcategory="détection obstacle"
+    //% blockId=obstacle
+    //% block="etat du capteur obstacle (0 ou 1)"
+    export function capt_obstacle(): number {
+		return pins.digitalReadPin(DigitalPin.P1);
     }
 	
 	/**
@@ -249,7 +259,7 @@ namespace profdetech_robot{
 namespace profdetech_parking_trottinettes{
 
 /**
-     * Etat du fin de course sur P0
+     * Etat du fin de course n°1 sur P0
      */
     //% blockId=FC1
     //% block="Etat fin de course 1ere place de parking (0 ou 1)"
@@ -258,7 +268,7 @@ namespace profdetech_parking_trottinettes{
     }
 	
 /**
-     * Etat du fin de course sur P14
+     * Etat du fin de course n°2 sur P14
      */
     //% blockId=FC2
     //% block="Etat fin de course 2eme place de parking (0 ou 1)"
@@ -268,7 +278,7 @@ namespace profdetech_parking_trottinettes{
 	
 	
 	/**
-     * Etat du fin de course sur P1
+     * Etat du fin de course n°3 sur P1
      */
     //% blockId=FC3
     //% block="Etat fin de course 3eme place de parking (0 ou 1)"
@@ -299,7 +309,7 @@ namespace profdetech_parking_trottinettes{
     }
 	
 		/**
-     * renvoie vrai si la trottinette 1 est présente (P1)
+     * renvoie vrai si la trottinette 3 est présente (P1)
      */
     //% blockId=trott3
     //% block="la trottinette active le fin de course 3 (vrai ou faux)"
