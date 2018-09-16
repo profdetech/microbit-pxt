@@ -3,14 +3,12 @@ namespace profdetech_portail{
 
 	
 	/**
-     * P0 = Moteur du portail */
-	 /**
-	 * P14 = Gyrophare
+     * P0 = Moteur du portail //* P14 = Gyrophare
 	 * P1 = Fin de course ouvert
-	 * P2 = Fin de course fermé
+	 * P15 = Fin de course fermé
      */
     //% blockId=portail_descriptif
-    //% block="descriptif"
+    //% block="descriptif branchement portail"
     export function portail_descriptif(): void {
     }
 	
@@ -106,6 +104,21 @@ namespace profdetech_portail{
 
 //% weight=100 color=#0084b4 icon="\uf17b"
 namespace profdetech_robot{
+
+	/**
+     * P0 = Moteur gauche
+	 * P14 = Moteur droit
+	 * P1 = Fin de course detection obstacle
+	 * P15 = capteur de vide
+     */
+    //% blockId=robot_descriptif
+    //% block="descriptif branchement robot"
+    export function robot_descriptif(): void {
+    }
+
+
+
+
 /**
      * Faire pivoter à gauche le robot à vitesse maximum (P0/P14)
      */
