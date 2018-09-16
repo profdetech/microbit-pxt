@@ -3,9 +3,9 @@ namespace profdetech_portail{
 
 	
 	/**
-     // P0 = Moteur du portail 
-	 //
-	 // P14 = Gyrophare
+	* P0 = Moteur du portail 
+	 * 
+	 * P14 = Gyrophare
 	 * P1 = Fin de course ouvert
 	 * P15 = Fin de course fermé
      */
