@@ -283,6 +283,7 @@ namespace profdetech_parking_trottinettes{
 		/**
      * renvoie vrai si la trottinette 1 est présente (P3)
      */
+    //% blockId=trott3
     //% block="la trottinette active le fin de course 3 (vrai ou faux)"
     export function trot3(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P2) == 1) {
