@@ -331,15 +331,7 @@ namespace profdetech_parking_trottinettes{
         } else return true;
     }
 	
-		/**
-     * initialisation afficheur nombre de places restantes
-     */
-    //% blockId=init_aff_place
-    //% block="initialisation afficheur du nombre de place sur P2 et P16"
-    export function aff_place(): void {
-        profdetech_grove.createDisplay(DigitalPin.P2, DigitalPin.P16): TM1637
-    }
-	
+
 	
 	
 	
