@@ -337,8 +337,7 @@ namespace profdetech_parking_trottinettes{
     //% blockId=init_aff_place
     //% block="initialisation afficheur du nombre de place sur P2 et P16"
     export function aff_place(): void {
-        let aff4digit: profdetech_grove.TM1637 = null
-		aff4digit = profdetech_grove.createDisplay(DigitalPin.P2, DigitalPin.P16)
+        profdetech_grove.createDisplay(DigitalPin.P2, DigitalPin.P16): TM1637
     }
 	
 	
