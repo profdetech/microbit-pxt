@@ -305,8 +305,8 @@ namespace profdetech_parking_trottinettes{
     //% block="la trottinette active le fin de course 1 (vrai ou faux)"
     export function trot1(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P0) == 1) {
-            return false;
-        } else return true;
+            return true;
+        } else return false;
     }
 	
 		/**
@@ -316,8 +316,8 @@ namespace profdetech_parking_trottinettes{
     //% block="la trottinette active le fin de course 2 (vrai ou faux)"
     export function trot2(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P14) == 1) {
-            return false;
-        } else return true;
+            return true;
+        } else return false;
     }
 	
 		/**
@@ -327,8 +327,8 @@ namespace profdetech_parking_trottinettes{
     //% block="la trottinette active le fin de course 3 (vrai ou faux)"
     export function trot3(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P1) == 1) {
-            return false;
-        } else return true;
+            return true;
+        } else return false;
     }
 	
 
