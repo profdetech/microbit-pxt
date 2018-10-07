@@ -266,6 +266,7 @@ namespace profdetech_parking_trottinettes{
      */
     //% blockId=park_descriptif
     //% block="descriptif branchement maquette parking"
+	//% weight=99 blockGap=16
     export function park_descriptif(): void {
     }
 
@@ -275,6 +276,7 @@ namespace profdetech_parking_trottinettes{
      */
     //% blockId=FC1
     //% block="Etat fin de course 1ere place de parking (0 ou 1)"
+	//% weight=93 blockGap=8
     export function FC1(): number {
 		return pins.digitalReadPin(DigitalPin.P0);
     }
@@ -284,6 +286,7 @@ namespace profdetech_parking_trottinettes{
      */
     //% blockId=FC2
     //% block="Etat fin de course 2eme place de parking (0 ou 1)"
+	//% weight=92 blockGap=8
     export function FC2(): number {
 		return pins.digitalReadPin(DigitalPin.P14);
     }
@@ -294,6 +297,7 @@ namespace profdetech_parking_trottinettes{
      */
     //% blockId=FC3
     //% block="Etat fin de course 3eme place de parking (0 ou 1)"
+	//% weight=91 blockGap=16
     export function FC3(): number {
 		return pins.digitalReadPin(DigitalPin.P1);
     }
@@ -303,6 +307,7 @@ namespace profdetech_parking_trottinettes{
      */
     //% blockId=trott1
     //% block="la trottinette active le fin de course 1 (vrai ou faux)"
+	//% weight=83 blockGap=8
     export function trot1(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P0) == 1) {
             return true;
@@ -314,6 +319,7 @@ namespace profdetech_parking_trottinettes{
      */
     //% blockId=trott2
     //% block="la trottinette active le fin de course 2 (vrai ou faux)"
+	//% weight=82 blockGap=8
     export function trot2(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P14) == 1) {
             return true;
@@ -325,6 +331,7 @@ namespace profdetech_parking_trottinettes{
      */
     //% blockId=trott3
     //% block="la trottinette active le fin de course 3 (vrai ou faux)"
+	//% weight=81 blockGap=16
     export function trot3(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P1) == 1) {
             return true;
