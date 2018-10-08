@@ -1,4 +1,4 @@
-//% weight=100 color=#00aced icon="\uf1b9"
+//% weight=98 color=#00aced icon="\uf1b9"
 namespace profdetech_portail{
 
 	
@@ -10,6 +10,7 @@ namespace profdetech_portail{
 	 */
     //% blockId=portail_descriptif
     //% block="Descriptif branchement portail"
+	//% weight=99 blockGap=24
     export function portail_descriptif(): void {
     }
 	
@@ -20,6 +21,7 @@ namespace profdetech_portail{
      */
     //% blockId=portail_ouvrir
     //% block="Ouvrir le portail"
+	//% weight=95 blockGap=8
     export function ouvrir_portail(): void {
         pins.servoWritePin(AnalogPin.P0, 0);
     }
@@ -29,6 +31,7 @@ namespace profdetech_portail{
      */
     //% blockId=portail_fermer
     //% block="Fermer le portail"
+	//% weight=94 blockGap=8
     export function fermer_portail(): void {
         pins.servoWritePin(AnalogPin.P0, 180);
     }
@@ -38,6 +41,7 @@ namespace profdetech_portail{
      */
     //% blockId=portail_arreter
     //% block="Arreter le portail"
+	//% weight=93 blockGap=24
     export function arreter_portail(): void {
         pins.servoWritePin(AnalogPin.P0, 90);
     }
@@ -47,6 +51,7 @@ namespace profdetech_portail{
      */
     //% blockId=allum_gyro
     //% block="Allumer le gyrophare"
+	//% weight=85 blockGap=8
     export function allumer_gyro(): void {
         pins.digitalWritePin(DigitalPin.P14, 1)
     }
@@ -56,6 +61,7 @@ namespace profdetech_portail{
      */
     //% blockId=etein_gyro
     //% block="Eteindre le gyrophare"
+	//% weight=84 blockGap=24
     export function eteindre_gyro(): void {
         pins.digitalWritePin(DigitalPin.P14, 0)
     }
@@ -65,6 +71,7 @@ namespace profdetech_portail{
      */
     //% blockId=FCO
     //% block="Etat fin de course ouvert (0 ou 1)"
+	//% weight=78 blockGap=8
     export function FCO(): number {
 		return pins.digitalReadPin(DigitalPin.P1);
     }
@@ -74,6 +81,7 @@ namespace profdetech_portail{
      */
     //% blockId=PO_entier
     //% block="Le portail est ouvert en entier (vrai ou faux)"
+	//% weight=77 blockGap=24
     export function portail_ouvert(): boolean {
 		 if (pins.digitalReadPin(DigitalPin.P1) == 1) {
             return false;
@@ -85,6 +93,7 @@ namespace profdetech_portail{
      */
     //% blockId=FCF
     //% block="etat fin de course fermé (0 ou 1)"
+	//% weight=76 blockGap=8
     export function FCF(): number {
 		return pins.digitalReadPin(DigitalPin.P15);
     }
@@ -94,6 +103,7 @@ namespace profdetech_portail{
      */
     //% blockId=PF_entier
     //% block="le portail est fermé en entier (vrai ou faux)"
+	//% weight=75 blockGap=24
     export function portail_ferme(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P15) == 1) {
             return false;
@@ -103,7 +113,7 @@ namespace profdetech_portail{
 	
 }
 
-//% weight=100 color=#0084b4 icon="\uf17b"
+//% weight=99 color=#0084b4 icon="\uf17b"
 namespace profdetech_robot{
 
 	/**
@@ -114,6 +124,7 @@ namespace profdetech_robot{
      */
     //% blockId=robot_descriptif
     //% block="descriptif branchement robot"
+	//% weight=99 blockGap=24
     export function robot_descriptif(): void {
     }
 
@@ -125,6 +136,7 @@ namespace profdetech_robot{
      */
     //% blockId=robot_PGG
     //% block="Pivoter vers la gauche"
+	//% weight=92 blockGap=8
     export function PG(): void {
         pins.servoWritePin(AnalogPin.P0, 90);
         pins.servoWritePin(AnalogPin.P14, 180);
@@ -135,6 +147,7 @@ namespace profdetech_robot{
      */
     //% blockId=robot_PDD
     //% block="Pivoter vers la droite"
+	//% weight=91 blockGap=8
     export function PD(): void {
         pins.servoWritePin(AnalogPin.P0, 0);
         pins.servoWritePin(AnalogPin.P14, 90);
@@ -145,6 +158,7 @@ namespace profdetech_robot{
      */
     //% blockId=robot_stop
     //% block="arrêter"
+	//% weight=90 blockGap=8
     export function arreter(): void {
         // pins.servoWritePin(AnalogPin.P0, 90);
         // pins.servoWritePin(AnalogPin.P14, 90);
@@ -159,6 +173,7 @@ namespace profdetech_robot{
      */
     //% blockId=robot_avancer
     //% block="avancer"
+	//% weight=89 blockGap=8
     export function avancer(): void {
         pins.servoWritePin(AnalogPin.P0, 0);
         pins.servoWritePin(AnalogPin.P14, 180);
@@ -169,6 +184,7 @@ namespace profdetech_robot{
      */
     //% blockId=robot_reculer
     //% block="reculer"
+	//% weight=88 blockGap=8
     export function reculer(): void {
         pins.servoWritePin(AnalogPin.P0, 180);
         pins.servoWritePin(AnalogPin.P14, 0);
@@ -266,7 +282,7 @@ namespace profdetech_parking_trottinettes{
      */
     //% blockId=park_descriptif
     //% block="descriptif branchement maquette parking"
-	//% weight=99 blockGap=16
+	//% weight=99 blockGap=24
     export function park_descriptif(): void {
     }
 
@@ -297,7 +313,7 @@ namespace profdetech_parking_trottinettes{
      */
     //% blockId=FC3
     //% block="Etat fin de course 3eme place de parking (0 ou 1)"
-	//% weight=91 blockGap=16
+	//% weight=91 blockGap=24
     export function FC3(): number {
 		return pins.digitalReadPin(DigitalPin.P1);
     }
@@ -331,7 +347,7 @@ namespace profdetech_parking_trottinettes{
      */
     //% blockId=trott3
     //% block="la trottinette active le fin de course 3 (vrai ou faux)"
-	//% weight=81 blockGap=16
+	//% weight=81 blockGap=24
     export function trot3(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P1) == 1) {
             return true;
