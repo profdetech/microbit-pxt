@@ -1,4 +1,4 @@
-//% weight=98 color=#00aced icon="\uf1b9"
+//% weight=12 color=#00aced icon="\uf1b9"
 namespace profdetech_portail{
 
 	
@@ -113,7 +113,7 @@ namespace profdetech_portail{
 	
 }
 
-//% weight=99 color=#0084b4 icon="\uf17b"
+//% weight=13 color=#0084b4 icon="\uf17b"
 namespace profdetech_robot{
 
 	/**
@@ -293,7 +293,7 @@ namespace profdetech_robot{
 	
 }
 
-//% weight=100 color=#0084b4 icon="\uf206"
+//% weight=14 color=#0084b4 icon="\uf206"
 namespace profdetech_parking_trottinettes{
 
 /**
