@@ -92,7 +92,7 @@ namespace profdetech_portail{
      * Etat du fin de course fermé sur P15
      */
     //% blockId=FCF
-    //% block="etat fin de course fermé (0 ou 1)"
+    //% block="Etat fin de course fermé (0 ou 1)"
 	//% weight=76 blockGap=8
     export function FCF(): number {
 		return pins.digitalReadPin(DigitalPin.P15);
@@ -102,7 +102,7 @@ namespace profdetech_portail{
      * renvoie vrai si le portail est fermé est entier (FCF sur P15)
      */
     //% blockId=PF_entier
-    //% block="le portail est fermé en entier (vrai ou faux)"
+    //% block="Le portail est fermé en entier (vrai ou faux)"
 	//% weight=75 blockGap=24
     export function portail_ferme(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P15) == 1) {
@@ -123,7 +123,7 @@ namespace profdetech_robot{
 	 * P15 = capteur de vide
      */
     //% blockId=robot_descriptif
-    //% block="descriptif branchement robot"
+    //% block="Descriptif branchement robot"
 	//% weight=99 blockGap=24
     export function robot_descriptif(): void {
     }
@@ -147,7 +147,7 @@ namespace profdetech_robot{
      */
     //% blockId=robot_PDD
     //% block="Pivoter vers la droite"
-	//% weight=91 blockGap=8
+	//% weight=91 blockGap=24
     export function PD(): void {
         pins.servoWritePin(AnalogPin.P0, 0);
         pins.servoWritePin(AnalogPin.P14, 90);
@@ -157,7 +157,7 @@ namespace profdetech_robot{
      * Arrêter le robot (P0/P14)
      */
     //% blockId=robot_stop
-    //% block="arrêter"
+    //% block="Arrêter"
 	//% weight=90 blockGap=8
     export function arreter(): void {
         // pins.servoWritePin(AnalogPin.P0, 90);
@@ -172,7 +172,7 @@ namespace profdetech_robot{
      * Faire avancer le robot (P0/P14)
      */
     //% blockId=robot_avancer
-    //% block="avancer"
+    //% block="Avancer"
 	//% weight=89 blockGap=8
     export function avancer(): void {
         pins.servoWritePin(AnalogPin.P0, 0);
@@ -183,7 +183,7 @@ namespace profdetech_robot{
      * Faire reculer le robot (P0/P14)
      */
     //% blockId=robot_reculer
-    //% block="reculer"
+    //% block="Reculer"
 	//% weight=88 blockGap=8
     export function reculer(): void {
         pins.servoWritePin(AnalogPin.P0, 180);
@@ -201,16 +201,37 @@ namespace profdetech_robot{
     export function PD90(): void {
 		let item = 0
 		item = input.compassHeading()
-        pins.servoWritePin(AnalogPin.P0, 0);
+		item = item + 90
+		if (item > 360) {
+			item = item - 360
+		} 
+		pins.servoWritePin(AnalogPin.P0, 0);
         pins.servoWritePin(AnalogPin.P14, 90);
-		while (input.compassHeading() < item + 90) {
-	
-		}
+		while (input.compassHeading() != item) {}
 		pins.servoWritePin(AnalogPin.P0, 90);
         pins.servoWritePin(AnalogPin.P14, 90);
     }
 
-
+	/**
+     * Faire pivoter à gauche le robot de 90° (P0/P14)
+     */
+    //% subcategory="Moteurs option sup"
+    //% blockId=robot_PG90
+    //% block="Pivoter vers la gauche de 90°"
+    export function PG90(): void {
+		let item = 0
+		item = input.compassHeading()
+		item = item - 90
+		if (item < 0) {
+			item = item + 360
+		} 
+		pins.servoWritePin(AnalogPin.P0, 90);
+        pins.servoWritePin(AnalogPin.P14, 180);
+		while (input.compassHeading() != item) {}
+		pins.servoWritePin(AnalogPin.P0, 90);
+        pins.servoWritePin(AnalogPin.P14, 90);
+    }
+	
 	/**
      * Avancer à une vitesse variable en pourcentage (P0/P14) 100% = vitesse maximum
      */
@@ -281,7 +302,7 @@ namespace profdetech_parking_trottinettes{
 	 * P1 = Fin de course trottinette 3
      */
     //% blockId=park_descriptif
-    //% block="descriptif branchement maquette parking"
+    //% block="Descriptif branchement maquette parking"
 	//% weight=99 blockGap=24
     export function park_descriptif(): void {
     }
@@ -322,7 +343,7 @@ namespace profdetech_parking_trottinettes{
      * renvoie vrai si la trottinette 1 est présente (P0)
      */
     //% blockId=trott1
-    //% block="la trottinette active le fin de course 1 (vrai ou faux)"
+    //% block="La trottinette active le fin de course 1 (vrai ou faux)"
 	//% weight=83 blockGap=8
     export function trot1(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P0) == 1) {
@@ -334,7 +355,7 @@ namespace profdetech_parking_trottinettes{
      * renvoie vrai si la trottinette 2 est présente (P14)
      */
     //% blockId=trott2
-    //% block="la trottinette active le fin de course 2 (vrai ou faux)"
+    //% block="La trottinette active le fin de course 2 (vrai ou faux)"
 	//% weight=82 blockGap=8
     export function trot2(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P14) == 1) {
@@ -346,7 +367,7 @@ namespace profdetech_parking_trottinettes{
      * renvoie vrai si la trottinette 3 est présente (P1)
      */
     //% blockId=trott3
-    //% block="la trottinette active le fin de course 3 (vrai ou faux)"
+    //% block="La trottinette active le fin de course 3 (vrai ou faux)"
 	//% weight=81 blockGap=24
     export function trot3(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P1) == 1) {
