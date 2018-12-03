@@ -402,6 +402,4 @@ namespace profdetech_parking_trottinettes{
 	
 
 	
-	
-	
 }
