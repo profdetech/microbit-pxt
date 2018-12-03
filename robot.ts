@@ -399,7 +399,6 @@ namespace profdetech_parking_trottinettes{
             return true;
         } else return false;
     }
-	
-
-	
+		
+}
 }
