@@ -3,10 +3,15 @@ namespace profdetech_portail{
 
 	
 	/**
-	 * P0 = Moteur du portail 
-	 * P14 = Gyrophare
+	 * P0 = haut parleur
+	 * P14 = Moteur du portail 
 	 * P1 = Fin de course ouvert
 	 * P15 = Fin de course fermé
+	 * P2 = 
+	 * P16 = 
+	 * P12 = gyrophare
+	 * P13 = Recepteur infrarouge
+	 * P8 = barrière infrarouge
 	 */
     //% blockId=portail_descriptif
     //% block="Descriptif branchement portail"
@@ -17,53 +22,54 @@ namespace profdetech_portail{
 	
 	
 	/**
-     * ouvrir le portail (moteur sur P0)
+     * ouvrir le portail (moteur sur P14)
      */
     //% blockId=portail_ouvrir
     //% block="Ouvrir le portail"
 	//% weight=95 blockGap=8
     export function ouvrir_portail(): void {
-        pins.servoWritePin(AnalogPin.P0, 0);
+        pins.servoWritePin(AnalogPin.P14, 0);
     }
 
     /**
-     * fermer le portail (moteur sur P0)
+     * fermer le portail (moteur sur P14)
      */
     //% blockId=portail_fermer
     //% block="Fermer le portail"
 	//% weight=94 blockGap=8
     export function fermer_portail(): void {
-        pins.servoWritePin(AnalogPin.P0, 180);
+        pins.servoWritePin(AnalogPin.P14, 180);
     }
 	
 	/**
-     * arrêter le portail (moteur sur P0)
+     * arrêter le portail (moteur sur P14)
      */
     //% blockId=portail_arreter
     //% block="Arreter le portail"
 	//% weight=93 blockGap=24
     export function arreter_portail(): void {
-        pins.servoWritePin(AnalogPin.P0, 90);
+        //pins.servoWritePin(AnalogPin.P14, 90);
+		pins.digitalWritePin(DigitalPin.P14, 0)
     }
 
 	/**
-     * allumer le gyrophare (branché sur P14)
+     * allumer le gyrophare (branché sur P12)
      */
     //% blockId=allum_gyro
     //% block="Allumer le gyrophare"
 	//% weight=85 blockGap=8
     export function allumer_gyro(): void {
-        pins.digitalWritePin(DigitalPin.P14, 1)
+        pins.digitalWritePin(DigitalPin.P12, 1)
     }
 	
 	/**
-     * éteindre le gyrophare (branché sur P14)
+     * éteindre le gyrophare (branché sur P12)
      */
     //% blockId=etein_gyro
     //% block="Eteindre le gyrophare"
 	//% weight=84 blockGap=24
     export function eteindre_gyro(): void {
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.digitalWritePin(DigitalPin.P12, 0)
     }
 	
 	/**
@@ -84,8 +90,8 @@ namespace profdetech_portail{
 	//% weight=77 blockGap=24
     export function portail_ouvert(): boolean {
 		 if (pins.digitalReadPin(DigitalPin.P1) == 1) {
-            return false;
-        } else return true;
+            return true;
+        } else return false;
     }
 	
 	/**
@@ -106,11 +112,30 @@ namespace profdetech_portail{
 	//% weight=75 blockGap=24
     export function portail_ferme(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P15) == 1) {
-            return false;
-        } else return true;
+            return true;
+        } else return false;
     }
 	
+	/**
+     * Etat de la barriere infrarouge sur P8
+     */
+    //% blockId=bar_inf
+    //% block="Etat de la barriere infrarouge (0 ou 1)"
+	//% weight=74 blockGap=8
+    export function FCF(): number {
+		return pins.digitalReadPin(DigitalPin.P8);
+    }
 	
+	/**
+     * renvoie vrai si la barriere infra rouge est coupé (sur P8)
+     */
+    //% blockId=bar_inf_vrai
+    //% block="La barriere infrarouge est coupé (vrai ou faux)"
+	//% weight=73 blockGap=24
+    export function portail_ferme(): boolean {
+		if (pins.digitalReadPin(DigitalPin.P8) == 1) {
+            return true;
+        } else return false;
 }
 
 //% weight=13 color=#0084b4 icon="\uf17b"
