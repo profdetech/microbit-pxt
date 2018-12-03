@@ -122,7 +122,7 @@ namespace profdetech_portail{
     //% blockId=bar_inf
     //% block="Etat de la barriere infrarouge (0 ou 1)"
 	//% weight=74 blockGap=8
-    export function FCF(): number {
+    export function etat_barriere(): number {
 		return pins.digitalReadPin(DigitalPin.P8);
     }
 	
@@ -132,7 +132,7 @@ namespace profdetech_portail{
     //% blockId=bar_inf_vrai
     //% block="La barriere infrarouge est coupé (vrai ou faux)"
 	//% weight=73 blockGap=24
-    export function portail_ferme(): boolean {
+    export function barriere_coupe(): boolean {
 		if (pins.digitalReadPin(DigitalPin.P8) == 1) {
             return true;
         } else return false;
