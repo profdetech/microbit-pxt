@@ -3,15 +3,15 @@ namespace profdetech_portail{
 
 	
 	/**
-	 * P0 = haut parleur
-	 * P14 = Moteur du portail 
-	 * P1 = Fin de course ouvert
-	 * P15 = Fin de course fermé
-	 * P2 = 
-	 * P16 = 
-	 * P12 = gyrophare
-	 * P13 = Recepteur infrarouge
-	 * P8 = barrière infrarouge
+	 * P0 = haut parleur --
+	 * P14 = Moteur du portail --
+	 * P1 = Fin de course ouvert --
+	 * P15 = Fin de course fermé --
+	 * P2 = non utilise --
+	 * P16 = non utilise --
+	 * P12 = gyrophare -- 
+	 * P13 = Recepteur infrarouge --
+	 * P8 = barrière infrarouge --
 	 */
     //% blockId=portail_descriptif
     //% block="Descriptif branchement portail"
