@@ -137,6 +137,7 @@ namespace profdetech_portail{
             return true;
         } else return false;
 }
+}
 
 //% weight=13 color=#0084b4 icon="\uf17b"
 namespace profdetech_robot{
@@ -400,5 +401,4 @@ namespace profdetech_parking_trottinettes{
         } else return false;
     }
 		
-}
 }
