@@ -2,7 +2,7 @@
  * MakeCode editor extension for DHT11 and DHT22 humidity/temperature sensors
  * by Alan Wang
  */
-//% block="DHT11/DHT22" weight=100 color=#ff8f3f icon="\uf043"
+//% block="Serre connecté" weight=100 color=#ff8f3f icon="\uf043"
 namespace dht11_dht22 {
 
     let _temperature: number = 0.0
@@ -13,7 +13,7 @@ namespace dht11_dht22 {
     * Query data from DHT11/DHT22 sensor. If you are using 4 pins/no PCB board versions, you'll need to pull up the data pin. 
     * It is also recommended to wait 1 (DHT11) or 2 (DHT22) seconds between each query.
     */
-    //% block="Query $DHT|Data pin $dataPin|Pin pull up $pullUp|Serial output $serialOtput|Wait 2 sec after query $wait"
+    //% block="Requete $DHT|port $dataPin|Pin pull up $pullUp|Serial output $serialOtput|Attendre 2sec apres la requete $wait"
     //% pullUp.defl=true
     //% serialOtput.defl=false
     //% wait.defl=true
@@ -115,7 +115,7 @@ namespace dht11_dht22 {
     /**
     * Read humidity/temperature data from lastest query of DHT11/DHT22
     */
-    //% block="Read $data"
+    //% block="Lire $data"
     export function readData(data: dataType): number {
         if (_readSuccessful) return data == dataType.humidity ? _humidity : _temperature
         else return -999
@@ -124,7 +124,7 @@ namespace dht11_dht22 {
     /**
     * Determind if last query is successful (checksum ok)
     */
-    //% block="Last query successful?"
+    //% block="Dernière requête réalisée avec succès ?"
     export function readDataSuccessful(): boolean {
         return _readSuccessful
     }
