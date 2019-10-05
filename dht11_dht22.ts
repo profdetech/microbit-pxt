@@ -2,7 +2,7 @@
  * MakeCode editor extension for DHT11 and DHT22 humidity/temperature sensors
  * by Alan Wang
  */
-//% block="Serre connecté" weight=100 color=#ff8f3f icon="\uf043"
+//% block="Serre connectee" weight=100 color=#ff8f3f icon="\uf043"
 namespace dht11_dht22 {
 
     let _temperature: number = 0.0
@@ -124,7 +124,7 @@ namespace dht11_dht22 {
     /**
     * Determind if last query is successful (checksum ok)
     */
-    //% block="Dernière requête réalisée avec succès ?"
+    //% block="Derniere requete realisee avec succes ?"
     export function readDataSuccessful(): boolean {
         return _readSuccessful
     }
