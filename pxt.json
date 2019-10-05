@@ -13,7 +13,7 @@
         "README.md",
         "menu.ts",
         "robot.ts"
-		"dht11_dht22.ts"
+	"dht11_dht22.ts"
     ],
     "testFiles": [
         
