@@ -219,11 +219,11 @@ namespace profdetech_robot{
 	
 	/**
      * Avancer à une vitesse variable 
-	 * en pourcentage (P2-P16) 100 = vitesse maximum
+	 * en pourcentage (P2-P16) 100% = vitesse maximum
      */
 	 //% subcategory="Moteurs"
     //% blockId=rob_vitvar
-    //% block="Avancer à la vitesse %speed|%"
+    //% block="Avancer à la vitesse %speed"
     //% speed.min=0 speed.max=100
     export function avvitvar(speed: number): void {
         /*first convert 0-100 to 0-90*/
@@ -236,12 +236,13 @@ namespace profdetech_robot{
     
 	/**
      * gestion des deux moteurs à une vitesse variable
-	 * en pourcentage (P2-P16) 100 = vitesse maximum
+	 * en pourcentage (P2-P16) 100% = vitesse maximum
      */
 	 //% subcategory="Moteurs"
     //% blockId=rob_motvitvar
-    //% block="Moteur gauche vitesse %speed1|% et moteur droit vitesse %speed2|%"
-    //% speed1.min=0 speed1.max=100 speed2.min=0 speed2.max=100
+    //% block="Moteur gauche vitesse %speed1| et moteur droit vitesse %speed2"
+    //% speed1.min=0 speed1.max=100 
+	//% speed2.min=0 speed2.max=100
     export function avmotvitvar(speed1: number, speed2: number): void {
         /*first convert 0-100 to 0-90*/
         let OutputVal3 = Math.clamp(0, 100, speed1) * 0.9;
