@@ -225,7 +225,7 @@ namespace profdetech_robot{
     //% blockId=robot_vitvar
     //% block="Avancer à la vitesse %speed|%"
     //% speed.min=0 speed.max=100
-    export function avvitvar(speed: number): void {
+    export function avavitvar(speed: number): void {
         /*first convert 0-100 to 0-90*/
         let OutputVal = Math.clamp(0, 100, speed) * 0.9;
 		let OutputVal2= 90 - OutputVal;
@@ -240,10 +240,10 @@ namespace profdetech_robot{
      */
 	 //% subcategory="Moteurs"
     //% blockId=robot_motvitvar
-    //% block="Moteur gauche vitesse %speed| % et moteur droit vitesse %speed2| %"
+    //% block="Moteur gauche vitesse %speed1|% et moteur droit vitesse %speed2|%"
     //% speed1.min=0 speed.max=100
 	//% speed2.min=0 speed2.max=100
-    export function avmotvitvar(speed1: number, speed2: number): void {
+    export function avamotvitvar(speed1: number, speed2: number): void {
         /*first convert 0-100 to 0-90*/
         let OutputVal3 = Math.clamp(0, 100, speed1) * 0.9;
 		let OutputVal4= 90 - OutputVal3;
