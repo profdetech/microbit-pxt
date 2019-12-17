@@ -241,7 +241,7 @@ namespace profdetech_robot{
 	 //% subcategory="Moteurs"
     //% blockId=robot_motvitvar
     //% block="Moteur gauche vitesse %speed1|% et moteur droit vitesse %speed2|%"
-    //% speed1.min=0 speed.max=100
+    //% speed1.min=0 speed1.max=100
 	//% speed2.min=0 speed2.max=100
     export function avamotvitvar(speed1: number, speed2: number): void {
         /*first convert 0-100 to 0-90*/
@@ -250,8 +250,7 @@ namespace profdetech_robot{
 		pins.servoWritePin(AnalogPin.P2, OutputVal4);
 		OutputVal3 = Math.clamp(0, 100, speed2) * 0.9;
 		OutputVal4= OutputVal3 + 90;
-        pins.servoWritePin(AnalogPin.P16, OutputVal4);
-		     
+        pins.servoWritePin(AnalogPin.P16, OutputVal4);	     
     }
 	
 		/**
