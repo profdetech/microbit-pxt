@@ -143,6 +143,7 @@ namespace profdetech_portail{
 namespace profdetech_robot{
 
 	/**
+	* version 1.1
      * P2 = Moteur gauche
 	 * P16 = Moteur droit
 	 * P1 = Fin de course detection obstacle
