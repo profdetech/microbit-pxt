@@ -1,0 +1,40 @@
+
+	/**
+     * Faire pivoter à droite le robot de 90° (P2-P16)
+     */
+    //% subcategory="Moteurs option sup"
+    //% blockId=robot_PD90
+    //% block="Pivoter vers la droite de 90°"
+    export function PD90(): void {
+		let item = 0
+		item = input.compassHeading()
+		item = item + 90
+		if (item > 360) {
+			item = item - 360
+		} 
+		pins.servoWritePin(AnalogPin.P2, 0);
+        pins.servoWritePin(AnalogPin.P16, 90);
+		while (input.compassHeading() != item) {}
+		pins.servoWritePin(AnalogPin.P2, 90);
+        pins.servoWritePin(AnalogPin.P16, 90);
+    }
+
+	/**
+     * Faire pivoter à gauche le robot de 90° (P2-P16)
+     */
+    //% subcategory="Moteurs option sup"
+    //% blockId=robot_PG90
+    //% block="Pivoter vers la gauche de 90°"
+    export function PG90(): void {
+		let item = 0
+		item = input.compassHeading()
+		item = item - 90
+		if (item < 0) {
+			item = item + 360
+		} 
+		pins.servoWritePin(AnalogPin.P2, 90);
+        pins.servoWritePin(AnalogPin.P16, 180);
+		while (input.compassHeading() != item) {}
+		pins.servoWritePin(AnalogPin.P2, 90);
+        pins.servoWritePin(AnalogPin.P16, 90);
+    }

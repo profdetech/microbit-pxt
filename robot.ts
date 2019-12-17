@@ -146,7 +146,7 @@ namespace profdetech_robot{
 	* version 1.1
      * P2 = Moteur gauche
 	 * P16 = Moteur droit
-	 * P1 = Fin de course detection obstacle
+	 * P12 = Fin de course detection obstacle
 	 * P8 = capteur de vide
      */
     //% blockId=robot_descriptif
@@ -219,45 +219,6 @@ namespace profdetech_robot{
 	
 
 	
-	/**
-     * Faire pivoter à droite le robot de 90° (P2-P16)
-     */
-    //% subcategory="Moteurs option sup"
-    //% blockId=robot_PD90
-    //% block="Pivoter vers la droite de 90°"
-    export function PD90(): void {
-		let item = 0
-		item = input.compassHeading()
-		item = item + 90
-		if (item > 360) {
-			item = item - 360
-		} 
-		pins.servoWritePin(AnalogPin.P2, 0);
-        pins.servoWritePin(AnalogPin.P16, 90);
-		while (input.compassHeading() != item) {}
-		pins.servoWritePin(AnalogPin.P2, 90);
-        pins.servoWritePin(AnalogPin.P16, 90);
-    }
-
-	/**
-     * Faire pivoter à gauche le robot de 90° (P2-P16)
-     */
-    //% subcategory="Moteurs option sup"
-    //% blockId=robot_PG90
-    //% block="Pivoter vers la gauche de 90°"
-    export function PG90(): void {
-		let item = 0
-		item = input.compassHeading()
-		item = item - 90
-		if (item < 0) {
-			item = item + 360
-		} 
-		pins.servoWritePin(AnalogPin.P2, 90);
-        pins.servoWritePin(AnalogPin.P16, 180);
-		while (input.compassHeading() != item) {}
-		pins.servoWritePin(AnalogPin.P2, 90);
-        pins.servoWritePin(AnalogPin.P16, 90);
-    }
 	
 	/**
      * Avancer à une vitesse variable en pourcentage (P2-P16) 100% = vitesse maximum
@@ -296,13 +257,13 @@ namespace profdetech_robot{
     }
 	
 		/**
-     * Etat du capteur de fin de course détection obstacle sur P1
+     * Etat du capteur de fin de course détection obstacle sur P12
      */
 	 //% subcategory="Détection obstacle"
     //% blockId=obstacle
     //% block="Etat du capteur obstacle (0 ou 1)"
     export function capt_obstacle(): number {
-		return pins.digitalReadPin(DigitalPin.P1);
+		return pins.digitalReadPin(DigitalPin.P12);
     }
 	
 	/**
