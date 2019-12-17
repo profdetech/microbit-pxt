@@ -143,10 +143,10 @@ namespace profdetech_portail{
 namespace profdetech_robot{
 
 	/**
-     * P0 = Moteur gauche
-	 * P14 = Moteur droit
+     * P2 = Moteur gauche
+	 * P16 = Moteur droit
 	 * P1 = Fin de course detection obstacle
-	 * P15 = capteur de vide
+	 * P8 = capteur de vide
      */
     //% blockId=robot_descriptif
     //% block="Descriptif branchement robot"
@@ -158,29 +158,29 @@ namespace profdetech_robot{
 
 
 /**
-     * Faire pivoter à gauche le robot à vitesse maximum (P0/P14)
+     * Faire pivoter à gauche le robot à vitesse maximum (P2-P16)
      */
     //% blockId=robot_PGG
     //% block="Pivoter vers la gauche"
 	//% weight=92 blockGap=8
     export function PG(): void {
-        pins.servoWritePin(AnalogPin.P0, 90);
-        pins.servoWritePin(AnalogPin.P14, 180);
+        pins.servoWritePin(AnalogPin.P2, 90);
+        pins.servoWritePin(AnalogPin.P16, 180);
 		}
 		
 		/**
-     * Faire pivoter à droite le robot à vitesse maximum (P0/P14)
+     * Faire pivoter à droite le robot à vitesse maximum (P2-P16)
      */
     //% blockId=robot_PDD
     //% block="Pivoter vers la droite"
 	//% weight=91 blockGap=24
     export function PD(): void {
-        pins.servoWritePin(AnalogPin.P0, 0);
-        pins.servoWritePin(AnalogPin.P14, 90);
+        pins.servoWritePin(AnalogPin.P2, 0);
+        pins.servoWritePin(AnalogPin.P16, 90);
     }
 	
 	/**
-     * Arrêter le robot (P0/P14)
+     * Arrêter le robot (P2-P16)
      */
     //% blockId=robot_stop
     //% block="Arrêter"
@@ -189,37 +189,37 @@ namespace profdetech_robot{
         // pins.servoWritePin(AnalogPin.P0, 90);
         // pins.servoWritePin(AnalogPin.P14, 90);
 		//solution kitronic servolite
-		pins.servoWritePin(AnalogPin.P0, 90);
-        pins.servoWritePin(AnalogPin.P14, 90);
+		pins.servoWritePin(AnalogPin.P2, 90);
+        pins.servoWritePin(AnalogPin.P16, 90);
 	}
 	
 	
     /**
-     * Faire avancer le robot (P0/P14)
+     * Faire avancer le robot (P2-P16)
      */
     //% blockId=robot_avancer
     //% block="Avancer"
 	//% weight=89 blockGap=8
     export function avancer(): void {
-        pins.servoWritePin(AnalogPin.P0, 0);
-        pins.servoWritePin(AnalogPin.P14, 180);
+        pins.servoWritePin(AnalogPin.P2, 0);
+        pins.servoWritePin(AnalogPin.P16, 180);
     }
 
     /**
-     * Faire reculer le robot (P0/P14)
+     * Faire reculer le robot (P2-P16)
      */
     //% blockId=robot_reculer
     //% block="Reculer"
 	//% weight=88 blockGap=8
     export function reculer(): void {
-        pins.servoWritePin(AnalogPin.P0, 180);
-        pins.servoWritePin(AnalogPin.P14, 0);
+        pins.servoWritePin(AnalogPin.P2, 180);
+        pins.servoWritePin(AnalogPin.P16, 0);
     }
 	
 
 	
 	/**
-     * Faire pivoter à droite le robot de 90° (P0/P14)
+     * Faire pivoter à droite le robot de 90° (P2-P16)
      */
     //% subcategory="Moteurs option sup"
     //% blockId=robot_PD90
@@ -231,15 +231,15 @@ namespace profdetech_robot{
 		if (item > 360) {
 			item = item - 360
 		} 
-		pins.servoWritePin(AnalogPin.P0, 0);
-        pins.servoWritePin(AnalogPin.P14, 90);
+		pins.servoWritePin(AnalogPin.P2, 0);
+        pins.servoWritePin(AnalogPin.P16, 90);
 		while (input.compassHeading() != item) {}
-		pins.servoWritePin(AnalogPin.P0, 90);
-        pins.servoWritePin(AnalogPin.P14, 90);
+		pins.servoWritePin(AnalogPin.P2, 90);
+        pins.servoWritePin(AnalogPin.P16, 90);
     }
 
 	/**
-     * Faire pivoter à gauche le robot de 90° (P0/P14)
+     * Faire pivoter à gauche le robot de 90° (P2-P16)
      */
     //% subcategory="Moteurs option sup"
     //% blockId=robot_PG90
@@ -251,15 +251,15 @@ namespace profdetech_robot{
 		if (item < 0) {
 			item = item + 360
 		} 
-		pins.servoWritePin(AnalogPin.P0, 90);
-        pins.servoWritePin(AnalogPin.P14, 180);
+		pins.servoWritePin(AnalogPin.P2, 90);
+        pins.servoWritePin(AnalogPin.P16, 180);
 		while (input.compassHeading() != item) {}
-		pins.servoWritePin(AnalogPin.P0, 90);
-        pins.servoWritePin(AnalogPin.P14, 90);
+		pins.servoWritePin(AnalogPin.P2, 90);
+        pins.servoWritePin(AnalogPin.P16, 90);
     }
 	
 	/**
-     * Avancer à une vitesse variable en pourcentage (P0/P14) 100% = vitesse maximum
+     * Avancer à une vitesse variable en pourcentage (P2-P16) 100% = vitesse maximum
      */
 	 //% subcategory="Moteurs option sup"
     //% blockId=robot_vitvar
@@ -269,15 +269,15 @@ namespace profdetech_robot{
         /*first convert 0-100 to 0-90*/
         let OutputVal = Math.clamp(0, 100, speed) * 0.9;
 		let OutputVal2= 90 - OutputVal;
-		pins.servoWritePin(AnalogPin.P0, OutputVal2);
+		pins.servoWritePin(AnalogPin.P2, OutputVal2);
 		OutputVal2= OutputVal + 90;
-        pins.servoWritePin(AnalogPin.P14, OutputVal2);
+        pins.servoWritePin(AnalogPin.P16 OutputVal2);
 		     
     }
     
 	
 	/**
-     * gestion des deux moteurs à une vitesse variable en pourcentage (P0/P14) 100% = vitesse maximum
+     * gestion des deux moteurs à une vitesse variable en pourcentage (P2-P16) 100% = vitesse maximum
      */
 	 //% subcategory="Moteurs option sup"
     //% blockId=robot_motvitvar
@@ -288,10 +288,10 @@ namespace profdetech_robot{
         /*first convert 0-100 to 0-90*/
         let OutputVal3 = Math.clamp(0, 100, speed) * 0.9;
 		let OutputVal4= 90 - OutputVal3;
-		pins.servoWritePin(AnalogPin.P0, OutputVal4);
+		pins.servoWritePin(AnalogPin.P2, OutputVal4);
 		OutputVal3 = Math.clamp(0, 100, speed2) * 0.9;
 		OutputVal4= OutputVal3 + 90;
-        pins.servoWritePin(AnalogPin.P14, OutputVal4);
+        pins.servoWritePin(AnalogPin.P16, OutputVal4);
 		     
     }
 	
@@ -306,13 +306,13 @@ namespace profdetech_robot{
     }
 	
 	/**
-     * Etat du capteur de vide sur P15
+     * Etat du capteur de vide sur P8
      */
 	 //% subcategory="Détection du vide"
     //% blockId=vide
     //% block="Etat du capteur de vide (0 ou 1)"
     export function capt_vide(): number {
-		return pins.digitalReadPin(DigitalPin.P15);
+		return pins.digitalReadPin(DigitalPin.P8);
     }
 	
 	
