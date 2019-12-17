@@ -272,7 +272,6 @@ namespace profdetech_robot{
 		pins.servoWritePin(AnalogPin.P2, OutputVal2);
 		OutputVal2= OutputVal + 90;
         pins.servoWritePin(AnalogPin.P16, OutputVal2);
-		     
     }
     
 	
