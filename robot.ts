@@ -217,9 +217,6 @@ namespace profdetech_robot{
         pins.servoWritePin(AnalogPin.P16, 0);
     }
 	
-
-	
-	
 	/**
      * Avancer à une vitesse variable en pourcentage (P2-P16) 100% = vitesse maximum
      */
@@ -236,18 +233,17 @@ namespace profdetech_robot{
         pins.servoWritePin(AnalogPin.P16, OutputVal2);
     }
     
-	
 	/**
      * gestion des deux moteurs à une vitesse variable en pourcentage (P2-P16) 100% = vitesse maximum
      */
 	 //% subcategory="Moteurs"
     //% blockId=robot_motvitvar
     //% block="Moteur gauche vitesse %speed| % et moteur droit vitesse %speed2| %"
-    //% speed.min=0 speed.max=100
+    //% speed1.min=0 speed.max=100
 	//% speed2.min=0 speed2.max=100
-    export function avancermotvitvar(speed: number, speed2: number): void {
+    export function avancermotvitvar(speed1: number, speed2: number): void {
         /*first convert 0-100 to 0-90*/
-        let OutputVal3 = Math.clamp(0, 100, speed) * 0.9;
+        let OutputVal3 = Math.clamp(0, 100, speed1) * 0.9;
 		let OutputVal4= 90 - OutputVal3;
 		pins.servoWritePin(AnalogPin.P2, OutputVal4);
 		OutputVal3 = Math.clamp(0, 100, speed2) * 0.9;
