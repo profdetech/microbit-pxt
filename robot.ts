@@ -263,15 +263,15 @@ namespace profdetech_robot{
 		let item = 0
 		item = input.compassHeading()
 		item = item + 90
-		if (item > 360) {
+		if (item > 359) {
 			pins.servoWritePin(AnalogPin.P2, 0);
 			pins.servoWritePin(AnalogPin.P16, 90);
-			while (input.compassHeading() > 270) {}
+			while (input.compassHeading() >= 270) {}
 			item = item - 360
 		} 
 		pins.servoWritePin(AnalogPin.P2, 0);
         pins.servoWritePin(AnalogPin.P16, 90);
-		while (input.compassHeading() < item) {}
+		while (input.compassHeading() <= item) {}
 		pins.servoWritePin(AnalogPin.P2, 90);
         pins.servoWritePin(AnalogPin.P16, 90);
     }
@@ -289,12 +289,12 @@ namespace profdetech_robot{
 		if (item < 0) {
 		pins.servoWritePin(AnalogPin.P2, 90);
         pins.servoWritePin(AnalogPin.P16, 180);
-		while (input.compassHeading() < 90) {}
+		while (input.compassHeading() <= 90) {}
 			item = item + 360
 		} 
 		pins.servoWritePin(AnalogPin.P2, 90);
         pins.servoWritePin(AnalogPin.P16, 180);
-		while (input.compassHeading() > item) {}
+		while (input.compassHeading() >= item) {}
 		pins.servoWritePin(AnalogPin.P2, 90);
         pins.servoWritePin(AnalogPin.P16, 90);
     }
