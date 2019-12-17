@@ -227,7 +227,7 @@ namespace profdetech_robot{
     //% speed.min=0 speed.max=100
     export function avvitvar(speed: number): void {
         /*first convert 0-100 to 0-90*/
-        let OutputVal = Math.clamp(0, 100, speed) * 0.9;
+        let OutputVal = speed * 0.9;
 		let OutputVal2= 90 - OutputVal;
 		pins.servoWritePin(AnalogPin.P2, OutputVal2);
 		OutputVal2= OutputVal + 90;
